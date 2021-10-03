@@ -1,5 +1,12 @@
 /* Customize Font-Awesome default styles */
 
-i.fas {
+.fas.fa-shopping-cart,
+.fas .fa-user {
   margin-right: 0.5em;
+}
+
+.fas.fa-star,
+.fas.fa-star-half-alt,
+.far.fa-star {
+  margin-right: 0.25em;
 }

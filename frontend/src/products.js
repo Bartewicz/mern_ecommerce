@@ -41,7 +41,7 @@ const products = [
     size: 0.5,
     coffeine: 7,
     countInStock: 5,
-    rating: 3.5,
+    rating: 4,
     numReviews: 12,
   },
   {
@@ -101,7 +101,7 @@ const products = [
     size: 1,
     coffeine: 5,
     countInStock: 7,
-    rating: 4,
+    rating: 3,
     numReviews: 10,
   },
 ]

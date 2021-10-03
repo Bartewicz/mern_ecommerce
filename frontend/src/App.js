@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import HomeScreen from './screens/HomeScreen'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <main className="pb-3" role="main">
         <Container>
-          <h1>Pora na Twoją ulubioną kawkę.</h1>
+          <HomeScreen />
         </Container>
       </main>
       <Footer />

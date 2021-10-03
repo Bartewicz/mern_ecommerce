@@ -13,17 +13,17 @@ function Header() {
         collapseOnSelect
       >
         <Container>
-          <Navbar.Brand href="/">P. Kaffka</Navbar.Brand>
+          <Navbar.Brand href="/">{'Mr. Caffeinov'}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/cart" className="mr-4">
                 <i className="fas fa-shopping-cart" />
-                Koszyk
+                {'Cart'}
               </Nav.Link>
               <Nav.Link href="/login">
                 <i className="fas fa-user" />
-                Zaloguj
+                {'Login'}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

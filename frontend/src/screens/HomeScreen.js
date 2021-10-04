@@ -1,13 +1,13 @@
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
-import Product from '../components/Product'
+import ProductCard from '../components/ProductCard'
 import products from '../products'
 
 function HomeScreen() {
   const toProductListItem = (product) => (
     <Col key={product._id} sm={12} md={6} lg={4}>
-      <Product product={product} />
+      <ProductCard product={product} />
     </Col>
   )
 

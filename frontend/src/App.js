@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 
 import Footer from './components/Footer'
@@ -14,9 +14,11 @@ function App() {
         <Header />
         <main className="pb-3" role="main">
           <Container>
-            <Route path="/" component={HomeScreen} exact />
-            <Route path="/product/:id" component={ProductScreen} exact />
-            <Route path="*" component={NotFound} />
+            <Switch>
+              <Route path="/" component={HomeScreen} exact />
+              <Route path="/product/:id" component={ProductScreen} exact />
+              <Route path="*" component={NotFound} />
+            </Switch>
           </Container>
         </main>
         <Footer />

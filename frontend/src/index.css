@@ -15,3 +15,7 @@ main {
 .rating .stars {
   color: coral;
 }
+
+.not-found {
+  max-width: 50rem;
+}

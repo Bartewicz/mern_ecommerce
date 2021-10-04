@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import LinkContainer from 'react-router-bootstrap/lib/LinkContainer'
 
 function Header() {
   return (
@@ -13,18 +14,24 @@ function Header() {
         collapseOnSelect
       >
         <Container>
-          <Navbar.Brand href="/">{'Mr. Caffeinov'}</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>{'Mr. Caffeinov'}</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/cart" className="mr-4">
-                <i className="fas fa-shopping-cart" />
-                {'Cart'}
-              </Nav.Link>
-              <Nav.Link href="/login">
-                <i className="fas fa-user" />
-                {'Login'}
-              </Nav.Link>
+              <LinkContainer to="/cart">
+                <Nav.Link className="mr-4">
+                  <span className="fas fa-shopping-cart" />
+                  {'Cart'}
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/login">
+                <Nav.Link>
+                  <span className="fas fa-user" />
+                  {'Login'}
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

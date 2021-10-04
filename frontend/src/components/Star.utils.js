@@ -4,17 +4,14 @@ export const STAR_TYPE = {
   EMPTY: 'empty',
 }
 
+const typeToIconMap = {
+  [STAR_TYPE.FULL]: <span className="fas fa-star" />,
+  [STAR_TYPE.HALF]: <span className="fas fa-star-half-alt" />,
+  [STAR_TYPE.EMPTY]: <span className="far fa-star" />,
+}
+
 export function iconByType(type) {
-  switch (type) {
-    case STAR_TYPE.FULL:
-      return <i className="fas fa-star" />
-    case STAR_TYPE.HALF:
-      return <i className="fas fa-star-half-alt" />
-    case STAR_TYPE.EMPTY:
-      return <i className="far fa-star" />
-    default:
-      return undefined
-  }
+  return typeToIconMap[type]
 }
 
 export function toStarTypes(rating) {

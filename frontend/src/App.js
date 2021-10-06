@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
-import HomeScreen from './screens/HomeScreen'
-import ProductScreen from './screens/ProductScreen'
+import HomeScreen from './screens/Home'
+import ProductScreen from './screens/Product'
 import NotFound from './screens/NotFound'
 
 function App() {

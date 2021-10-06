@@ -1,7 +1,7 @@
 /* Customize Font-Awesome default styles */
 
 .fas.fa-shopping-cart,
-.fas .fa-user {
+.fas.fa-user {
   margin-right: 0.5em;
 }
 
@@ -9,4 +9,10 @@
 .fas.fa-star-half-alt,
 .far.fa-star {
   margin-right: 0.25em;
+}
+
+.fas.fa-circle,
+.far.fa-circle {
+  font-size: 0.9em;
+  margin: 0 0.1rem;
 }

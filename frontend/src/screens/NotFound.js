@@ -1,6 +1,6 @@
-import Link from 'react-router-dom/Link'
-import Container from 'react-bootstrap/esm/Container'
-import Image from 'react-bootstrap/esm/Image'
+import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Image from 'react-bootstrap/Image'
 
 function NotFound() {
   return (

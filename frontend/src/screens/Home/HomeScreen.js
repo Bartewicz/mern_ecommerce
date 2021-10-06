@@ -1,8 +1,9 @@
 import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
-import ProductCard from '../components/ProductCard'
-import products from '../products'
+import ProductCard from '../../components/ProductCard'
+import products from '../../products'
 
 function HomeScreen() {
   const toProductListItem = (product) => (
@@ -12,10 +13,10 @@ function HomeScreen() {
   )
 
   return (
-    <>
-      <h1 className="py-3">{'Time for you favourite coffee'}</h1>
+    <Container>
+      <h1 className="py-3">{'Time for your favourite coffee'}</h1>
       <Row>{products.map(toProductListItem)}</Row>
-    </>
+    </Container>
   )
 }
 

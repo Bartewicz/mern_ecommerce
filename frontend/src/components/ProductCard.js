@@ -18,10 +18,7 @@ function Product({ product }) {
         </Link>
 
         <Card.Text as="div">
-          <Rating
-            rating={product.rating.toFixed(1)}
-            reviewsNumber={product.numReviews}
-          />
+          <Rating rating={product.rating} reviewsNumber={product.numReviews} />
         </Card.Text>
 
         <Card.Text as="h4" className="mt-2">{`$${product.price}`}</Card.Text>

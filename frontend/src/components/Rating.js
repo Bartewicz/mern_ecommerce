@@ -1,17 +1,12 @@
-import Star from './Star'
-import { toStarTypes } from './Star.utils'
+import { iconByType, toStarTypes } from './Rating.utils'
 
 const MAX_STARS = 5
 
-const Rating = ({ rating, reviewsNumber }) => {
-  function toStarIcon(type, index) {
-    return <Star key={index} type={type} />
-  }
-
+function Rating({ rating, reviewsNumber }) {
   const stars = new Array(MAX_STARS)
     .fill(undefined)
     .reduce(toStarTypes(rating), [])
-    .map(toStarIcon)
+    .map(iconByType)
 
   return (
     <div className="rating">

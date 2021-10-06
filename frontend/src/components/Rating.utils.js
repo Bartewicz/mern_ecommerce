@@ -5,18 +5,19 @@ export const STAR_TYPE = {
 }
 
 const typeToIconMap = {
-  [STAR_TYPE.FULL]: <span className="fas fa-star" />,
-  [STAR_TYPE.HALF]: <span className="fas fa-star-half-alt" />,
-  [STAR_TYPE.EMPTY]: <span className="far fa-star" />,
+  [STAR_TYPE.FULL]: 'fas fa-star',
+  [STAR_TYPE.HALF]: 'fas fa-star-half-alt',
+  [STAR_TYPE.EMPTY]: 'far fa-star',
 }
 
-export function iconByType(type) {
-  return typeToIconMap[type]
+export function iconByType(type, key) {
+  return <span key={key} className={typeToIconMap[type]} />
 }
 
 export function toStarTypes(rating) {
-  const full = Number(rating[0])
-  const hasHalf = rating.endsWith('.5')
+  const ratingString = rating.toString()
+  const full = Number(ratingString[0])
+  const hasHalf = ratingString.endsWith('.5')
   return (starTypes, current, index) => {
     if (index < full) {
       starTypes.push(STAR_TYPE.FULL)

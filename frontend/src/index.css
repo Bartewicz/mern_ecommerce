@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,10 +16,49 @@ main {
   padding-top: 7rem;
 }
 
+.no-select {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .rating .stars {
   color: #f9a826;
 }
 
 .not-found {
   max-width: 50rem;
+}
+
+.product-quantity-btn {
+  font-size: 1.3rem;
+  height: 2.7rem;
+  padding: 0;
+  width: 2.7rem;
+}
+
+.product-quantity-input {
+  background-color: transparent;
+  border-width: 2px;
+  height: 2.7rem;
+  width: 6rem;
+  vertical-align: middle;
+}
+
+.product-quantity-input:disabled, .product-quantity-input[readonly] {
+  background-color: transparent;
+}
+
+.product-add-to-cart-btn {
+  width: 11.4rem;
 }

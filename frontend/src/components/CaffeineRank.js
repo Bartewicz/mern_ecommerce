@@ -8,7 +8,12 @@ function CaffeineRank({ caffeineRank }) {
     .reduce(toCoffeeBeanTypes(caffeineRank), [])
     .map(iconByType)
 
-  return beans
+  return (
+    <>
+      {'Coffeine: '}
+      {beans}
+    </>
+  )
 }
 
 export default CaffeineRank

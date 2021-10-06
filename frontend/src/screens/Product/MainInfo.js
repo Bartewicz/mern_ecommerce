@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Button from 'react-bootstrap/Button'
 
 import CaffeineRank from '../../components/CaffeineRank'
 import Rating from '../../components/Rating'
+import PriceAndSize from './PriceAndSize'
+import AddToCart from './AddToCart'
 
 function MainInfo({ product }) {
-  const { countInStock } = product
-
-  const available =
-    countInStock === 0 ? 'Out of stock' : `${countInStock} available`
-
   return (
     <ListGroup variant="flush">
       <ListGroup.Item>
@@ -26,23 +22,17 @@ function MainInfo({ product }) {
         </Link>
       </ListGroup.Item>
       <ListGroup.Item>
-        {'Coffeine: '}
         <CaffeineRank caffeineRank={product.caffeine} />
       </ListGroup.Item>
       <ListGroup.Item>
         <span>{`Type: ${product.type}`}</span>
       </ListGroup.Item>
       <ListGroup.Item>
-        <div className="my-3">
-          <h3 className="d-inline align-baseline">{`$${product.price}`}</h3>
-          <span className="align-baseline text-muted ml-2">{`${product.size}kg`}</span>
-        </div>
-        <div>
-          <Button className="btn-block" type="button">
-            {'Add to cart'}
-          </Button>
-          <span className="ml-2">{available}</span>
-        </div>
+        <PriceAndSize price={product.price} size={product.size} />
+        <AddToCart
+          countInStock={product.countInStock}
+          productId={product._id}
+        />
       </ListGroup.Item>
     </ListGroup>
   )

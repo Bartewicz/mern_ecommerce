@@ -1,18 +1,30 @@
-import { iconByType, toStarTypes } from './Rating.utils'
+import IconsSet from './IconsSet'
+import {
+  MAX_STARS,
+  STAR_TYPE,
+  toStarTypes,
+  typeToIconMap,
+} from './Rating.utils'
 
-const MAX_STARS = 5
+const ratingDeterminants = {
+  maxIcons: MAX_STARS,
+  values: STAR_TYPE,
+  typeToIconMap: typeToIconMap,
+  toTypeReducer: toStarTypes,
+}
 
 function Rating({ rating, reviewsNumber }) {
-  const stars = new Array(MAX_STARS)
-    .fill(undefined)
-    .reduce(toStarTypes(rating), [])
-    .map(iconByType)
-
   return (
-    <div className="rating">
-      <span className="stars">{stars}</span>
+    <>
+      <IconsSet
+        {...{
+          ...ratingDeterminants,
+          values: rating,
+          containerClassNames: 'rating-stars',
+        }}
+      />
       <span className="ml-1">{`${reviewsNumber} reviews`}</span>
-    </div>
+    </>
   )
 }
 

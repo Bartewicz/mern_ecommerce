@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 
-import CaffeineRank from '../../components/CaffeineRank'
-import Rating from '../../components/Rating'
-import PriceAndSize from './PriceAndSize'
-import AddToCart from './AddToCart'
+import CaffeineRank from '../../../components/CaffeineRank'
+import Rating from '../../../components/Rating'
+import CartFactors from './CartFactors'
 
-function MainInfo({ product }) {
+function ProductMainInfo({ product }) {
   return (
     <ListGroup variant="flush">
       <ListGroup.Item>
@@ -28,8 +27,9 @@ function MainInfo({ product }) {
         <span>{`Type: ${product.type}`}</span>
       </ListGroup.Item>
       <ListGroup.Item>
-        <PriceAndSize price={product.price} size={product.size} />
-        <AddToCart
+        <CartFactors
+          price={product.price}
+          size={product.size}
           countInStock={product.countInStock}
           productId={product._id}
         />
@@ -38,4 +38,4 @@ function MainInfo({ product }) {
   )
 }
 
-export default MainInfo
+export default ProductMainInfo

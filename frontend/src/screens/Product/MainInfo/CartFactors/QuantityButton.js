@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button'
 
-function AddToCartButton({ label, disabled, onClick }) {
+function QuantityButton({ label, disabled, onClick }) {
   return (
     <Button
       onClick={onClick}
@@ -14,4 +14,4 @@ function AddToCartButton({ label, disabled, onClick }) {
   )
 }
 
-export default AddToCartButton
+export default QuantityButton

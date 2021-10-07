@@ -1,15 +1,12 @@
+export const MAX_BEANS = 7
 export const COFFEE_BEAN_TYPE = {
   FULL: 'full',
   EMPTY: 'empty',
 }
 
-const typeToIconMap = {
+export const typeToIconMap = {
   [COFFEE_BEAN_TYPE.FULL]: 'fas fa-circle',
   [COFFEE_BEAN_TYPE.EMPTY]: 'far fa-circle',
-}
-
-export function iconByType(type, key) {
-  return <span key={key} className={typeToIconMap[type]} />
 }
 
 export function toCoffeeBeanTypes(caffeineRank) {

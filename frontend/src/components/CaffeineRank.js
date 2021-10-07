@@ -1,17 +1,28 @@
-import { iconByType, toCoffeeBeanTypes } from './CaffeineRank.utils'
+import IconsSet from './IconsSet'
+import {
+  COFFEE_BEAN_TYPE,
+  MAX_BEANS,
+  toCoffeeBeanTypes,
+  typeToIconMap,
+} from './CaffeineRank.utils'
 
-const MAX_BEANS = 7
+const caffeineRankDeterminants = {
+  maxIcons: MAX_BEANS,
+  values: COFFEE_BEAN_TYPE,
+  typeToIconMap: typeToIconMap,
+  toTypeReducer: toCoffeeBeanTypes,
+}
 
 function CaffeineRank({ caffeineRank }) {
-  const beans = new Array(MAX_BEANS)
-    .fill(undefined)
-    .reduce(toCoffeeBeanTypes(caffeineRank), [])
-    .map(iconByType)
-
   return (
     <>
-      {'Coffeine: '}
-      {beans}
+      <span>{'Coffeine: '}</span>
+      <IconsSet
+        {...{
+          ...caffeineRankDeterminants,
+          values: caffeineRank,
+        }}
+      />
     </>
   )
 }

@@ -1,17 +1,14 @@
+export const MAX_STARS = 5
 export const STAR_TYPE = {
   FULL: 'full',
   HALF: 'half',
   EMPTY: 'empty',
 }
 
-const typeToIconMap = {
+export const typeToIconMap = {
   [STAR_TYPE.FULL]: 'fas fa-star',
   [STAR_TYPE.HALF]: 'fas fa-star-half-alt',
   [STAR_TYPE.EMPTY]: 'far fa-star',
-}
-
-export function iconByType(type, key) {
-  return <span key={key} className={typeToIconMap[type]} />
 }
 
 export function toStarTypes(rating) {

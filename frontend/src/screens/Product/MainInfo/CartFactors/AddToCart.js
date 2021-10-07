@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import AddToCartButton from './AddToCartButton'
+import QuantityButton from './QuantityButton'
 
 function AddToCart({ countInStock, productId }) {
   const [quantity, setQuantity] = useState(1)
@@ -18,8 +18,8 @@ function AddToCart({ countInStock, productId }) {
 
   return (
     <Form>
-      <div className="mb-2 no-select">
-        <AddToCartButton
+      <div className="product-cart-factor no-select d-inline-block mb-2">
+        <QuantityButton
           onClick={decrease}
           disabled={decreaseDisabled}
           label="-"
@@ -32,15 +32,15 @@ function AddToCart({ countInStock, productId }) {
           readOnly
           className="product-quantity-input d-inline-block text-center"
         />
-        <AddToCartButton
+        <QuantityButton
           onClick={increase}
           disabled={increaseDisabled}
           label="+"
         />
-        <span className="ml-2">{available}</span>
       </div>
+      <span className="ml-2">{available}</span>
 
-      <Button className="product-add-to-cart-btn btn-block" type="button">
+      <Button className="product-cart-factor btn-block d-block" type="button">
         {'Add to cart'}
       </Button>
     </Form>

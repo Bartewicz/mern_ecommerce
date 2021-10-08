@@ -1,4 +1,8 @@
 @import 'bootstrap.min.css';
+.list-group-item {
+  background-color: transparent;
+}
+
 .ml-1 {
   margin-left: 0.25rem !important;
 }

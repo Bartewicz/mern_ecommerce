@@ -1,8 +1,13 @@
+:root {
+  --main-bg-color: #fbfbfb;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  background-color: var(--main-bg-color);
   margin: 0;
   padding: 0;
 }
@@ -14,6 +19,24 @@ body {
 main {
   flex: 1;
   padding-top: 7rem;
+}
+
+.navbar-brand {
+  position: relative;
+  padding-left: 70px;
+  font-size: 2rem;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  line-height: 1rem;
+}
+
+.navbar-brand .logo {
+  left: 0;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .no-select {
@@ -32,12 +55,12 @@ main {
   supported by Chrome, Edge, Opera and Firefox */
 }
 
-.rating-stars {
-  color: #f9a826;
-}
-
 .not-found {
   max-width: 50rem;
+}
+
+.rating-stars {
+  color: #f9a826;
 }
 
 .product-quantity-btn {

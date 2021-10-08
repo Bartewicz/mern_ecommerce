@@ -1,7 +1,8 @@
 import Container from 'react-bootstrap/Container'
+import { LinkContainer } from 'react-router-bootstrap'
+import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import LinkContainer from 'react-router-bootstrap/lib/LinkContainer'
 
 function Header() {
   return (
@@ -15,7 +16,10 @@ function Header() {
       >
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>{'Mr. Caffeinov'}</Navbar.Brand>
+            <Navbar.Brand className="navbar-brand">
+              <Image src="/images/logo-60x60.png" className="logo" />
+              {'Mr. Caffeinov'}
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

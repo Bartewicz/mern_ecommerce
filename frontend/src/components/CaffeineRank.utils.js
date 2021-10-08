@@ -10,14 +10,18 @@ export const typeToIconMap = {
 }
 
 export function toCoffeeBeanTypes(caffeineRank) {
-  const rankString = caffeineRank.toString()
-  const full = Number(rankString[0])
-  return (coffeeBeanTypes, current, index) => {
-    if (index < full) {
-      coffeeBeanTypes.push(COFFEE_BEAN_TYPE.FULL)
-    } else {
-      coffeeBeanTypes.push(COFFEE_BEAN_TYPE.EMPTY)
+  try {
+    const rankString = caffeineRank.toString()
+    const full = Number(rankString[0])
+    return (coffeeBeanTypes, current, index) => {
+      if (index < full) {
+        coffeeBeanTypes.push(COFFEE_BEAN_TYPE.FULL)
+      } else {
+        coffeeBeanTypes.push(COFFEE_BEAN_TYPE.EMPTY)
+      }
+      return coffeeBeanTypes
     }
-    return coffeeBeanTypes
+  } catch {
+    return (initialValue) => initialValue
   }
 }

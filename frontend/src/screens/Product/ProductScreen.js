@@ -1,18 +1,24 @@
+import axios from 'axios'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
 import MainInfo from './MainInfo'
-import products from '../../products'
 import BackButton from '../../components/BackButton'
 import Container from 'react-bootstrap/esm/Container'
-
-function byId(id) {
-  return (product) => product._id === id
-}
+import { useEffect, useState } from 'react'
 
 function ProductScreen({ match }) {
-  const product = products.find(byId(match.params.id))
+  const { id } = match.params
+  const [product, setProduct] = useState({})
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const { data: product } = await axios.get(`/api/products/${id}`)
+      setProduct(product)
+    }
+    getProduct()
+  }, [id])
 
   return (
     <Container>

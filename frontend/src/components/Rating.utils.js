@@ -12,17 +12,21 @@ export const typeToIconMap = {
 }
 
 export function toStarTypes(rating) {
-  const ratingString = rating.toString()
-  const full = Number(ratingString[0])
-  const hasHalf = ratingString.endsWith('.5')
-  return (starTypes, current, index) => {
-    if (index < full) {
-      starTypes.push(STAR_TYPE.FULL)
-    } else if (index === full && hasHalf) {
-      starTypes.push(STAR_TYPE.HALF)
-    } else {
-      starTypes.push(STAR_TYPE.EMPTY)
+  try {
+    const ratingString = rating.toString()
+    const full = Number(ratingString[0])
+    const hasHalf = ratingString.endsWith('.5')
+    return (starTypes, current, index) => {
+      if (index < full) {
+        starTypes.push(STAR_TYPE.FULL)
+      } else if (index === full && hasHalf) {
+        starTypes.push(STAR_TYPE.HALF)
+      } else {
+        starTypes.push(STAR_TYPE.EMPTY)
+      }
+      return starTypes
     }
-    return starTypes
+  } catch {
+    return (initialValue) => initialValue
   }
 }

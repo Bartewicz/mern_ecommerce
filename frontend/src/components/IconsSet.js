@@ -5,7 +5,7 @@ function IconsSet({
   values,
   typeToIconMap,
   toTypeReducer,
-  containerTagName = 'div',
+  containerTagName = 'span',
   iconTagName = 'span',
   containerClassNames = '',
   iconClassNames = '',

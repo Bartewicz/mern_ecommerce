@@ -1,8 +1,10 @@
 {
   "name": "frontend",
-  "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
+  "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
+  "description": "A React.js client application for Kaffka - coffee webstore.",
   "private": true,
+  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,8 +15,7 @@
     "react-dom": "^17.0.2",
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-scripts": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

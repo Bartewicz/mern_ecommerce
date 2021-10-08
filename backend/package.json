@@ -1,14 +1,18 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "Kaffka - coffee webstore app",
+  "name": "kaffka-backend",
+  "version": "0.1.0",
+  "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
+  "description": "A Node.js server application for Kaffka - coffee webstore.",
+  "homepage": "https://github.com/Bartewicz/mern_ecommerce#readme",
+  "private": true,
+  "engines": {
+    "node": "14.8.0"
+  },
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bartewicz",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
   },

@@ -1,0 +1,20 @@
+{
+  "name": "kaffka",
+  "version": "0.1.0",
+  "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
+  "description": "A MERN eCommerce (coffee webstore) platform build from scratch.",
+  "homepage": "https://github.com/Bartewicz/mern_ecommerce#readme",
+  "private": true,
+  "engines": {
+    "node": "14.8.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm:server\" \"npm:client\"",
+    "client": "npm start --prefix frontend",
+    "server": "nodemon backend/server"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.4"
+  }
+}

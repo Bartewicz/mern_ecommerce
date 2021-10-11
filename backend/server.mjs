@@ -1,6 +1,7 @@
-const express = require('express')
-const config = require('./config')
-const products = require('./data/products')
+import express from 'express'
+
+import config from './config.mjs'
+import products from './data/products.mjs'
 
 const { HOSTNAME, PORT, NODE_ENV } = config
 

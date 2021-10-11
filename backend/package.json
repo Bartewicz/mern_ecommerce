@@ -1,12 +1,10 @@
 {
-  "name": "kaffka-backend",
-  "version": "0.1.0",
-  "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
+  "name": "kaffka-server",
   "description": "A Node.js server application for Kaffka - coffee webstore.",
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config server.js",
+    "start": "nodemon -r dotenv/config server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

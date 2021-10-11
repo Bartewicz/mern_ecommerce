@@ -1,7 +1,5 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
+  "name": "kaffka-client",
   "description": "A React.js client application for Kaffka - coffee webstore.",
   "private": true,
   "proxy": "http://127.0.0.1:5000",

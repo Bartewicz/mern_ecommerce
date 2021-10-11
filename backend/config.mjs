@@ -11,4 +11,4 @@ const config = Object.freeze({
   NODE_ENV: process.env.NODE_ENV || defaultConfig.NODE_ENV,
 })
 
-module.exports = config
+export default config

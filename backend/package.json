@@ -3,11 +3,7 @@
   "version": "0.1.0",
   "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
   "description": "A Node.js server application for Kaffka - coffee webstore.",
-  "homepage": "https://github.com/Bartewicz/mern_ecommerce#readme",
   "private": true,
-  "engines": {
-    "node": "14.8.0"
-  },
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",

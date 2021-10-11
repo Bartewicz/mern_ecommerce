@@ -4,6 +4,8 @@ A custom eCommerce platform build from scratch with React, Redux, Express and Mo
 
 ## General setup
 
+Client and Server apps are configured as [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
+
 Code is formatted with [Prettier](https://prettier.io/).
 
 ## Frontend

@@ -6,8 +6,8 @@ const defaultConfig = {
 }
 
 const config = Object.freeze({
-  HOSTNAME: process.env.HOSTNAME || LOCALHOST,
-  PORT: process.env.PORT || defaultConfig.PORT,
+  HOSTNAME: process.env.EXPRESS_APP_HOSTNAME || LOCALHOST,
+  PORT: process.env.EXPRESS_APP_PORT || defaultConfig.PORT,
   NODE_ENV: process.env.NODE_ENV || defaultConfig.NODE_ENV,
 })
 

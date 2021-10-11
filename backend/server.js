@@ -21,5 +21,5 @@ app.get('/api/products/:id', (req, res) => {
 app.listen(
   PORT,
   HOSTNAME,
-  console.log(`Server running in ${NODE_ENV} mode on port: ${PORT}`)
+  console.log(`Server running in ${NODE_ENV} mode at ${HOSTNAME}:${PORT}`)
 )

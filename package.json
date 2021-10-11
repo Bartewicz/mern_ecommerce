@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "concurrently \"npm:server\" \"npm:client\"",
     "client": "npm start --prefix frontend",
-    "server": "nodemon backend/server"
+    "server": "nodemon -r dotenv/config backend/server.js dotenv_config_path=./backend/.env"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",

@@ -1,7 +1,8 @@
 const express = require('express')
+const config = require('./config')
 const products = require('./data/products')
 
-const PORT = 5000
+const { HOSTNAME, PORT, NODE_ENV } = config
 
 const app = express()
 
@@ -17,4 +18,8 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product)
 })
 
-app.listen(PORT, console.log(`Server running on port: ${PORT}`))
+app.listen(
+  PORT,
+  HOSTNAME,
+  console.log(`Server running in ${NODE_ENV} mode on port: ${PORT}`)
+)

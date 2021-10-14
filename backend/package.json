@@ -3,12 +3,14 @@
   "description": "A Node.js server application for Kaffka - coffee webstore.",
   "private": true,
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon -r dotenv/config server.mjs",
+    "start": "nodemon -r dotenv/config server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

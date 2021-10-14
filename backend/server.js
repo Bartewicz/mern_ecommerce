@@ -1,11 +1,13 @@
 import express from 'express'
 
-import config from './config.mjs'
-import products from './data/products.mjs'
+import { config } from './config.js'
+import { products } from './data/products.js'
+import { database } from './database/index.js'
 
 const { HOSTNAME, PORT, NODE_ENV } = config
 
 const app = express()
+database.initializeConnection()
 
 app.get('/', (req, res) => {
   res.send('API is running...')
@@ -22,5 +24,5 @@ app.get('/api/products/:id', (req, res) => {
 app.listen(
   PORT,
   HOSTNAME,
-  console.log(`Server running in ${NODE_ENV} mode at ${HOSTNAME}:${PORT}`)
+  console.log(`Server running in ${NODE_ENV} mode at: ${HOSTNAME}:${PORT}`)
 )

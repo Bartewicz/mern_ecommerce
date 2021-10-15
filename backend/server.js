@@ -3,6 +3,7 @@ import express from 'express'
 import { config } from './config.js'
 import { products } from './data/products.js'
 import { database } from './database/index.js'
+import { logger } from './utilities/logger.js'
 
 const { HOSTNAME, PORT, NODE_ENV } = config
 
@@ -25,6 +26,5 @@ app.get('/api/products/:id', (req, res) => {
 app.listen(
   PORT,
   HOSTNAME,
-  // eslint-disable-next-line no-console
-  console.log(`Server running in ${NODE_ENV} mode at: ${HOSTNAME}:${PORT}`)
+  logger(`Server running in ${NODE_ENV} mode at: ${HOSTNAME}:${PORT}`)
 )

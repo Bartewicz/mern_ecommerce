@@ -1,5 +1,8 @@
 export function defaultsTo(value, defaultValue) {
-  const isInvalid = [isNaN, isNull, isUndefined].reduce(toVerdict(value), false)
+  const isInvalid = [Number.isNaN, isNull, isUndefined].reduce(
+    toVerdict(value),
+    false
+  )
   return isInvalid ? defaultValue : value
 }
 

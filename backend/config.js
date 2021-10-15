@@ -1,4 +1,4 @@
-import { defaultsTo } from './utils.js'
+import { defaultsTo } from './utilities/utils.js'
 
 const defaultConfig = {
   HOSTNAME: 'localhost',

@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose'
+
 import { PRODUCT } from './Product'
 import { USER } from './User'
 

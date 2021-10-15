@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose'
+
 import { USER } from './User'
 
 export const PRODUCT = 'Product'

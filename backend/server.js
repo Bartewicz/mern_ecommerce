@@ -17,6 +17,7 @@ app.get('/api/products', (req, res) => {
 })
 app.get('/api/products/:id', (req, res) => {
   const { id } = req.params
+  // eslint-disable-next-line no-underscore-dangle
   const product = products.find((product) => product._id === id)
   res.json(product)
 })
@@ -24,5 +25,6 @@ app.get('/api/products/:id', (req, res) => {
 app.listen(
   PORT,
   HOSTNAME,
+  // eslint-disable-next-line no-console
   console.log(`Server running in ${NODE_ENV} mode at: ${HOSTNAME}:${PORT}`)
 )

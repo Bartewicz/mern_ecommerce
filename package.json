@@ -8,17 +8,24 @@
   "scripts": {
     "dev": "concurrently \"npm:server\" \"npm:client\"",
     "client": "npm start --prefix frontend",
+    "lint": "eslint backend/ frontend/",
     "server": "nodemon -r dotenv/config backend/server.js"
   },
-  "devDependencies": {
-    "concurrently": "^6.3.0",
-    "nodemon": "^2.0.4"
-  },
   "workspaces": [
-    "frontend",
-    "backend"
+    "backend",
+    "frontend"
   ],
   "dependencies": {
     "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "nodemon": "^2.0.4"
   }
 }

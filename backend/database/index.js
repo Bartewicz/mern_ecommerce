@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 import { config } from '../config.js'
-import { logger } from '../utilities/logger.js'
+import logger from '../utilities/logger.js'
 
 function handleError(error) {
   logger.error(`Could not connect to the mongoDB. Error: ${error.message}`)

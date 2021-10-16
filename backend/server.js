@@ -3,7 +3,7 @@ import express from 'express'
 import { config } from './config.js'
 import { products } from './data/products.js'
 import { database } from './database/index.js'
-import { logger } from './utilities/logger.js'
+import logger from './utilities/logger.js'
 
 const { HOSTNAME, PORT, NODE_ENV } = config
 

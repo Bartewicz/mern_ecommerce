@@ -1,12 +1,12 @@
 import dotenv from 'dotenv'
 
-import { products } from '../data/products.js'
-import { users } from '../data/users.js'
 import { Order } from '../models/Order.js'
 import { Product } from '../models/Product.js'
 import { User } from '../models/User.js'
 import logger from '../utilities/logger.js'
 import { database } from './index.js'
+import { products } from './sample/products.js'
+import { users } from './sample/users.js'
 
 const ACTION_TYPE = {
   delete: '--delete',

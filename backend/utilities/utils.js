@@ -6,14 +6,15 @@ export function isUndefined(value) {
   return value === undefined
 }
 
-function toVerdict(value) {
-  return (verdict, validator) => verdict || validator(value)
+export function defaultsTo(value, defaultValue) {
+  const isInvalid = Number.isNaN(value) || isNull(value) || isUndefined(value)
+  return isInvalid ? defaultValue : value
 }
 
-export function defaultsTo(value, defaultValue) {
-  const isInvalid = [Number.isNaN, isNull, isUndefined].reduce(
-    toVerdict(value),
-    false
-  )
-  return isInvalid ? defaultValue : value
+export function isNullOrUndefined(value) {
+  return isNull(value) || isUndefined(value)
+}
+
+export function not(expression) {
+  return !expression
 }

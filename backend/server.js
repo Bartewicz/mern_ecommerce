@@ -15,6 +15,7 @@ database.initializeConnection()
 
 app.use(requestLogger)
 app.use('/api', router)
+
 app.use(errorLogger)
 // TODO: add error responder
 app.use(failSafeHandler)

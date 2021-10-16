@@ -1,9 +1,11 @@
-import { model, Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
-import { PRODUCT } from './Product'
-import { USER } from './User'
+import { PRODUCT } from './Product.js'
+import { USER } from './User.js'
 
 const ORDER = 'Order'
+
+const { model, Schema } = mongoose
 
 const orderSchema = new Schema(
   {

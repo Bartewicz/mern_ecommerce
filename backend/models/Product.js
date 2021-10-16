@@ -1,11 +1,14 @@
-import { model, Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
-import { USER } from './User'
+import { USER } from './User.js'
 
 export const PRODUCT = 'Product'
 const REVIEW = 'Review'
 
 const COFFEE_TYPES = ['Arabica', 'Robusta', 'Blend']
+
+const { model, Schema } = mongoose
+
 function isValidType(type) {
   return COFFEE_TYPES.includes(type)
 }

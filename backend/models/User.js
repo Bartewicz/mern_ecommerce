@@ -1,8 +1,10 @@
-import { model, Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
 export const USER = 'User'
 
-const USER_ROLES = ['admin', 'customer']
+export const USER_ROLES = ['admin', 'customer']
+
+const { model, Schema } = mongoose
 
 function validateRole(role) {
   return USER_ROLES.includes(role)

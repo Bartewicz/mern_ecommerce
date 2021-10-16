@@ -10,7 +10,7 @@ function handleError(error) {
 
 function handleSuccess() {
   const { name } = mongoose.connection
-  logger(`Server successfully connected to database: ${name}`)
+  logger.success(`Server successfully connected to database: ${name}`)
 }
 
 function initializeConnection() {

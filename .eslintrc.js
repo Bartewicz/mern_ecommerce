@@ -65,6 +65,7 @@ module.exports = {
       },
     ],
     'no-shadow': 'off',
+    'no-underscore-dangle': 'off',
     semi: ['error', 'never'],
   },
 }

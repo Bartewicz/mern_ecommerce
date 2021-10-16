@@ -13,6 +13,26 @@ function isValidType(type) {
   return COFFEE_TYPES.includes(type)
 }
 
+const reviewSchema = new Schema(
+  {
+    customer: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: USER,
+    },
+    rating: {
+      type: Number,
+      min: 0,
+      max: 5,
+      required: true,
+    },
+    comment: { type: String },
+  },
+  {
+    timestamps: true,
+  }
+)
+
 const productSchema = new Schema(
   {
     brand: { type: String, required: true },
@@ -70,26 +90,6 @@ const productSchema = new Schema(
     },
   },
   { timestamps: true }
-)
-
-const reviewSchema = new Schema(
-  {
-    customer: {
-      type: Schema.Types.ObjectId,
-      required: true,
-      ref: USER,
-    },
-    rating: {
-      type: Number,
-      min: 0,
-      max: 5,
-      required: true,
-    },
-    comment: { type: String },
-  },
-  {
-    timestamps: true,
-  }
 )
 
 export const Product = model(PRODUCT, productSchema)

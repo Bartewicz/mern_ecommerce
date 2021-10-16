@@ -2,8 +2,14 @@
 
 const COLOR = {
   cyan: '\x1b[36m%s\x1b[0m',
+  green: '\x1b[32m%s\x1b[0m',
   red: '\x1b[31m%s\x1b[0m',
   yellow: '\x1b[33m%s\x1b[0m',
+}
+
+function then(callback) {
+  callback()
+  return { then }
 }
 
 function logger(message) {
@@ -16,17 +22,18 @@ function error(errorMessage) {
   return { then }
 }
 
-function warn(errorMessage) {
-  console.warn(COLOR.yellow, errorMessage)
+function success(message) {
+  console.log(COLOR.green, message)
   return { then }
 }
 
-function then(callback) {
-  callback()
+function warn(message) {
+  console.warn(COLOR.yellow, message)
   return { then }
 }
 
 logger.error = error
+logger.success = success
 logger.warn = warn
 
 export default logger

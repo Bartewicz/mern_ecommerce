@@ -1,6 +1,5 @@
 export const products = [
   {
-    _id: '1',
     name: 'Amsterdam Dream',
     image: '/images/amsterdam.jpg',
     description:
@@ -15,7 +14,6 @@ export const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Mexican Gold',
     image: '/images/mexican-gold.jpg',
     description:
@@ -30,7 +28,6 @@ export const products = [
     numReviews: 18,
   },
   {
-    _id: '3',
     name: 'Black Coffee Premium - box',
     image: '/images/black-coffee.jpg',
     description:
@@ -45,7 +42,6 @@ export const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Ethiopian Silver',
     image: '/images/etiopia-silver.jpg',
     description:
@@ -60,7 +56,6 @@ export const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Organic - Eko',
     image: '/images/organic-coffee.jpg',
     description:
@@ -75,7 +70,6 @@ export const products = [
     numReviews: 9,
   },
   {
-    _id: '6',
     name: 'Kilimanjaro',
     image: '/images/kilimanjaro-coffee.jpg',
     description:
@@ -90,7 +84,6 @@ export const products = [
     numReviews: 10,
   },
   {
-    _id: '7',
     name: 'Berliner Natural',
     image: '/images/natural-berliner.jpg',
     description:

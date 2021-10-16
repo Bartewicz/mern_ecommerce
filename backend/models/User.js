@@ -32,6 +32,12 @@ const userSchema = new Schema(
         message: (role) => `${role} is not valid!`,
       },
     },
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      // validator: [async Function] { get all usernames from users and compare }
+    },
   },
   { timestamps: true }
 )

@@ -47,7 +47,7 @@ module.exports = {
       {
         groups: [
           ['builtin', 'external', 'internal'],
-          ['parent', 'sibling', 'object', 'type', 'index'],
+          ['parent', 'sibling', 'index'],
         ],
         pathGroups: [
           {
@@ -65,7 +65,6 @@ module.exports = {
       },
     ],
     'no-shadow': 'off',
-    'no-use-before-define': 'off',
     semi: ['error', 'never'],
   },
 }

@@ -6,7 +6,11 @@ A custom eCommerce platform build from scratch with React, Redux, Express and Mo
 
 Client and Server apps are configured as [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
-Code is formatted with [Prettier](https://prettier.io/).
+[Eslint](https://eslint.org/) and [Prettier](https://prettier.io/) are used to provide consistent code style and format across whole repository.
+
+## Backend
+
+[Node.js](https://nodejs.org/) server developed with [Express.js](https://expressjs.com/) framework and Mongoose - an Object Data Modeling (ODM) library for MongoDB and Node.js
 
 ## Frontend
 

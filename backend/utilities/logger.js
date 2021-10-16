@@ -9,27 +9,27 @@ const COLOR = {
 
 function then(callback) {
   callback()
-  return { then }
 }
 
-function logger(message) {
-  console.log(COLOR.cyan, message)
+function promisified(logHandler) {
+  logHandler()
   return { then }
 }
 
 function error(errorMessage) {
-  console.error(COLOR.red, errorMessage)
-  return { then }
+  return promisified(() => console.error(COLOR.red, errorMessage))
 }
 
 function success(message) {
-  console.log(COLOR.green, message)
-  return { then }
+  return promisified(() => console.log(COLOR.green, message))
 }
 
 function warn(message) {
-  console.warn(COLOR.yellow, message)
-  return { then }
+  return promisified(() => console.warn(COLOR.yellow, message))
+}
+
+function logger(message) {
+  return promisified(() => console.log(COLOR.cyan, message))
 }
 
 logger.error = error

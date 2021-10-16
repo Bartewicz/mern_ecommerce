@@ -59,6 +59,6 @@ switch (action) {
     insertData()
     break
   default:
-    logger.error('Invalid argument!')
+    logger.error('Invalid argument!').then(() => process.exit(1))
     break
 }

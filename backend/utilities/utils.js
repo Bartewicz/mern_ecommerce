@@ -1,14 +1,14 @@
+export function defaultsTo(value, defaultValue) {
+  const isInvalid = Number.isNaN(value) || isNull(value) || isUndefined(value)
+  return isInvalid ? defaultValue : value
+}
+
 export function isNull(value) {
   return value === null
 }
 
 export function isUndefined(value) {
   return value === undefined
-}
-
-export function defaultsTo(value, defaultValue) {
-  const isInvalid = Number.isNaN(value) || isNull(value) || isUndefined(value)
-  return isInvalid ? defaultValue : value
 }
 
 export function isNullOrUndefined(value) {

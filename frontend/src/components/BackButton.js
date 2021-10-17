@@ -6,7 +6,7 @@ function BackButton() {
 
   return (
     <Button
-      className="btn btn-light px-0 my-3"
+      className="btn btn-light bg-transparent px-0 mb-3"
       onClick={goBack}
       as="span"
       tabIndex={0}

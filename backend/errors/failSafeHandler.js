@@ -8,7 +8,7 @@ export function failSafeHandler(error, req, res, next) {
   const { message = DEFAULT_ERROR_MSG, stack } = error
   const errorBody = { message }
 
-  if (config.NODE_ENV === 'dev') {
+  if (config.NODE_ENV === 'development') {
     errorBody.stack = stack
   }
 

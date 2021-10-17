@@ -14,12 +14,13 @@ export async function getProducts(request, response) {
 export async function getProductById(request, response) {
   const { id } = request.params
   if (not(isValidObjectId(id))) {
-    // TODO: Add custom Query error and Error types, e.g. NOT_FOUND @errors/
+    response.status(400)
     throw new Error('ObjectId is not in valid format!')
   }
 
   const product = await Product.findById(id).exec()
   if (isNullOrUndefined(product)) {
+    response.status(404)
     throw new Error(`Cannot find product with given id: ${id}`)
   }
 

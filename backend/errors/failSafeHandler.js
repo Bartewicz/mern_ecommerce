@@ -1,5 +1,16 @@
 /* eslint-disable no-unused-vars */
 
+import { config } from '../config.js'
+
+const DEFAULT_ERROR_MSG = 'Unhandled error exception'
+
 export function failSafeHandler(error, req, res, next) {
-  res.status(500).send(error.message)
+  const { message = DEFAULT_ERROR_MSG, stack } = error
+  const errorBody = { message }
+
+  if (config.NODE_ENV === 'dev') {
+    errorBody.stack = stack
+  }
+
+  res.status(500).json(errorBody)
 }

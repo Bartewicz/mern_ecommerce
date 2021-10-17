@@ -4,6 +4,7 @@ import { config } from './config.js'
 import { database } from './database/index.js'
 import { failSafeHandler } from './errors/failSafeHandler.js'
 import { errorLogger } from './errors/logger.js'
+import { unknownRouteHandler } from './errors/unknownRouteHandler.js'
 import { router } from './routes/router.js'
 import logger from './utilities/logger.js'
 import { requestLogger } from './utilities/requestLogger.js'
@@ -15,6 +16,7 @@ database.initializeConnection()
 
 app.use(requestLogger)
 app.use('/api', router)
+app.use(unknownRouteHandler)
 
 app.use(errorLogger)
 // TODO: add error responder

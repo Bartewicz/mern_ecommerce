@@ -14,6 +14,7 @@ export async function getProducts(request, response) {
 export async function getProductById(request, response) {
   const { id } = request.params
   if (not(isValidObjectId(id))) {
+    // TODO: Add custom Query error and Error types, e.g. NOT_FOUND @errors/
     throw new Error('ObjectId is not in valid format!')
   }
 

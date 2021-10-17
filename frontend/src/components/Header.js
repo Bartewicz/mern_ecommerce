@@ -1,12 +1,12 @@
 import Container from 'react-bootstrap/Container'
-import { LinkContainer } from 'react-router-bootstrap'
 import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
   return (
-    <header>
+    <header role="banner">
       <Navbar
         className="fixed-top"
         bg="dark"

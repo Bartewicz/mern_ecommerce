@@ -9,15 +9,14 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'prettier',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 2018,
     sourceType: 'module',
   },
@@ -25,12 +24,11 @@ module.exports = {
   overrides: [
     {
       files: ['backend/*.js', 'backend/**/*.js'],
-      rules: {
-        'import/extensions': 'off',
-      },
+      rules: { 'import/extensions': 'off' },
     },
   ],
   rules: {
+    'arrow-body-style': 'off',
     'comma-dangle': [
       'error',
       {
@@ -41,6 +39,7 @@ module.exports = {
         functions: 'never',
       },
     ],
+    'implicit-arrow-linebreak': 'off',
     'import/prefer-default-export': 'off',
     'import/order': [
       'error',
@@ -64,8 +63,16 @@ module.exports = {
         },
       },
     ],
+    'object-curly-newline': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
+    'react/jsx-curly-brace-presence': [
+      'warn',
+      { props: 'never', children: 'always' },
+    ],
+    'react/jsx-filename-extension': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
     semi: ['error', 'never'],
   },
 }

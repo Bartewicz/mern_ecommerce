@@ -21,7 +21,7 @@ export function toCoffeeBeanTypes(caffeineRank) {
       }
       return coffeeBeanTypes
     }
-  } catch {
+  } catch (error) {
     return (initialValue) => initialValue
   }
 }

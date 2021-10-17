@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 
 function Footer() {
   return (
-    <footer>
+    <footer role="contentinfo">
       <Container>
         <Row>
           <Col className="text-center py-3">&copy;{' 2021 MR. CAFFEINOV'}</Col>

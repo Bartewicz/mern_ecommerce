@@ -1,12 +1,13 @@
+import { useEffect, useState } from 'react'
+
 import axios from 'axios'
 import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
-import MainInfo from './MainInfo'
 import BackButton from '../../components/BackButton'
-import Container from 'react-bootstrap/esm/Container'
-import { useEffect, useState } from 'react'
+import MainInfo from './MainInfo'
 
 function ProductScreen({ match }) {
   const { id } = match.params

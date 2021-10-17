@@ -1,6 +1,8 @@
 import { useState } from 'react'
+
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+
 import QuantityButton from './QuantityButton'
 
 function AddToCart({ countInStock, productId }) {
@@ -13,8 +15,8 @@ function AddToCart({ countInStock, productId }) {
   const decreaseDisabled = quantity === minQuantity
   const increaseDisabled = quantity === maxQuantity
 
-  const decrease = () => setQuantity((quantity) => --quantity)
-  const increase = () => setQuantity((quantity) => ++quantity)
+  const decrease = () => setQuantity((quantity) => quantity - 1)
+  const increase = () => setQuantity((quantity) => quantity + 1)
 
   return (
     <Form>

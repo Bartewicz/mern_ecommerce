@@ -26,7 +26,7 @@ export function toStarTypes(rating) {
       }
       return starTypes
     }
-  } catch {
+  } catch (error) {
     return (initialValue) => initialValue
   }
 }

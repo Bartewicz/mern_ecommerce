@@ -1,10 +1,11 @@
 import React from 'react'
+
 import ReactDOM from 'react-dom'
 
+import App from './App'
 import './bootstrap.polyfill.css'
 import './font-awesome.override.css'
 import './index.css'
-import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
 import HomeScreen from './screens/Home'
-import ProductScreen from './screens/Product'
 import NotFound from './screens/NotFound'
+import ProductScreen from './screens/Product'
 
 function App() {
   return (

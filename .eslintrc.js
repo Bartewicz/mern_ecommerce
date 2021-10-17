@@ -9,6 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:react/recommended',
     'prettier',
   ],
   globals: {
@@ -24,7 +25,7 @@ module.exports = {
   overrides: [
     {
       files: ['backend/*.js', 'backend/**/*.js'],
-      rules: { 'import/extensions': 'off' },
+      rules: { 'import/extensions': ['error', 'always'] },
     },
   ],
   rules: {

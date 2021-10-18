@@ -15,7 +15,7 @@ export async function getProductById(request, response) {
   const { id } = request.params
   if (not(isValidObjectId(id))) {
     response.status(400)
-    throw new Error('ObjectId is not in valid format!')
+    throw new Error('ObjectId is not in valid format')
   }
 
   const product = await Product.findById(id).exec()

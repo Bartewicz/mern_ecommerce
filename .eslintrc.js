@@ -64,7 +64,6 @@ module.exports = {
         },
       },
     ],
-    'no-shadow': 'off',
     'no-underscore-dangle': 'off',
     'no-use-before-define': ['error', { functions: false, classes: true }],
     'object-curly-newline': 'off',

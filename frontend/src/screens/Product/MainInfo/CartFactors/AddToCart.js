@@ -15,8 +15,8 @@ function AddToCart({ countInStock, productId }) {
   const decreaseDisabled = quantity === minQuantity
   const increaseDisabled = quantity === maxQuantity
 
-  const decrease = () => setQuantity((quantity) => quantity - 1)
-  const increase = () => setQuantity((quantity) => quantity + 1)
+  const decrease = () => setQuantity((prevQuantity) => prevQuantity - 1)
+  const increase = () => setQuantity((prevQuantity) => prevQuantity + 1)
 
   return (
     <Form>

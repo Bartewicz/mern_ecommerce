@@ -13,9 +13,9 @@ function IconsSet({
   const Container = containerTagName
   const Icon = iconTagName
 
-  const iconByType = (typeToIconMap) => {
+  const iconByType = (map) => {
     return (type, key) => (
-      <Icon key={key} className={`${typeToIconMap[type]} ${iconClassNames}`} />
+      <Icon key={key} className={`${map[type]} ${iconClassNames}`} />
     )
   }
 

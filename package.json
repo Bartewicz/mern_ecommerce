@@ -10,7 +10,7 @@
     "client": "npm start --prefix frontend",
     "database:delete": "node -r dotenv/config backend/database/seeder.js --delete",
     "database:insert": "node -r dotenv/config backend/database/seeder.js --insert",
-    "lint": "eslint backend/ frontend/",
+    "lint": "concurrently \"eslint backend\" \"eslint frontend\"",
     "server": "nodemon -r dotenv/config backend/server.js"
   },
   "workspaces": [

@@ -64,7 +64,9 @@ module.exports = {
         },
       },
     ],
+    'no-debugger': 'warn',
     'no-underscore-dangle': 'off',
+    'no-unused-vars': 'warn',
     'no-use-before-define': ['error', { functions: false, classes: true }],
     'object-curly-newline': 'off',
     'react/jsx-curly-brace-presence': [

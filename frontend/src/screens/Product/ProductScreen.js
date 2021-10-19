@@ -1,25 +1,17 @@
-import { useEffect, useState } from 'react'
-
-import axios from 'axios'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
+import { getProductById } from '../../api/products'
 import BackButton from '../../components/BackButton'
+import { useAsync } from '../../hooks/useAsync'
 import MainInfo from './MainInfo'
 
 function ProductScreen({ match }) {
   const { id } = match.params
-  const [product, setProduct] = useState({})
 
-  useEffect(() => {
-    const getProduct = async () => {
-      const { data } = await axios.get(`/api/products/${id}`)
-      setProduct(data)
-    }
-    getProduct()
-  }, [id])
+  const { data: product } = useAsync(getProductById(id), {})
 
   return (
     <Container>

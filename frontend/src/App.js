@@ -10,19 +10,17 @@ import ProductScreen from './screens/Product'
 function App() {
   return (
     <Router>
-      <div className="App d-flex flex-column">
-        <Header />
-        <main className="pb-3" role="main">
-          <Container>
-            <Switch>
-              <Route path="/" component={HomeScreen} exact />
-              <Route path="/product/:id" component={ProductScreen} exact />
-              <Route path="*" component={NotFound} />
-            </Switch>
-          </Container>
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main className="pb-3" role="main">
+        <Container>
+          <Switch>
+            <Route path="/" component={HomeScreen} exact />
+            <Route path="/product/:id" component={ProductScreen} exact />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Container>
+      </main>
+      <Footer />
     </Router>
   )
 }

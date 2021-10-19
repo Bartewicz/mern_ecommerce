@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react'
-
-import axios from 'axios'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
+import { getAllProducts } from '../../api/products'
 import ProductCard from '../../components/ProductCard'
+import { useAsync } from '../../hooks/useAsync'
 
 function HomeScreen() {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await axios.get('/api/products')
-      setProducts(data)
-    }
-    getProducts()
-  }, [])
+  const { data: products } = useAsync(getAllProducts(), [])
 
   const toProductListItem = (product) => (
     <Col key={product._id} sm={12} md={6} lg={4}>

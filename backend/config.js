@@ -14,3 +14,13 @@ export const config = Object.freeze({
   NODE_ENV: defaultsTo(NODE_ENV, defaultConfig.NODE_ENV),
   PORT: defaultsTo(EXPRESS_APP_PORT, defaultConfig.PORT),
 })
+
+export function composeCorsOptions() {
+  return {
+    origin: isDevEnv() ? 'http://localhost:3000' : config.origin,
+  }
+}
+
+export function isDevEnv() {
+  return config.NODE_ENV === 'development'
+}

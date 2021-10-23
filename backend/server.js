@@ -1,6 +1,7 @@
+import cors from 'cors'
 import express from 'express'
 
-import { config } from './config.js'
+import { composeCorsOptions, config } from './config.js'
 import { database } from './database/index.js'
 import { failSafeHandler } from './errors/failSafeHandler.js'
 import { errorLogger } from './errors/logger.js'
@@ -13,6 +14,8 @@ const { HOSTNAME, PORT, NODE_ENV } = config
 
 const app = express()
 database.initializeConnection()
+
+app.use(cors(composeCorsOptions()))
 
 app.use(requestLogger)
 app.use('/api', router)

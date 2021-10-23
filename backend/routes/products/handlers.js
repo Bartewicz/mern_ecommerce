@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 import { Product } from '../../models/Product.js'
-import { isNullOrUndefined, not } from '../../utilities/utils.js'
+import { isNullOrUndefined } from '../../utilities/utils.js'
 
 const { isValidObjectId } = mongoose
 
@@ -13,7 +13,7 @@ export async function getProducts(request, response) {
 
 export async function getProductById(request, response) {
   const { id } = request.params
-  if (not(isValidObjectId(id))) {
+  if (!isValidObjectId(id)) {
     response.status(400)
     throw new Error('ObjectId is not in valid format')
   }

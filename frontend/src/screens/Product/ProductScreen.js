@@ -3,15 +3,14 @@ import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
-import { getProductById } from '../../api/products'
+import { useGetProductById } from '../../api/products.hooks'
 import BackButton from '../../components/BackButton'
-import { useAsync } from '../../hooks/useAsync'
 import MainInfo from './MainInfo'
 
 function ProductScreen({ match }) {
   const { id } = match.params
 
-  const { data: product } = useAsync(getProductById(id), {})
+  const { data: product } = useGetProductById(id)
 
   return (
     <Container>

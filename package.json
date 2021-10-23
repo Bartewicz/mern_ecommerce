@@ -10,7 +10,7 @@
     "client": "npm start --prefix frontend",
     "database:delete": "node -r dotenv/config backend/database/seeder.js --delete",
     "database:insert": "node -r dotenv/config backend/database/seeder.js --insert",
-    "lint": "concurrently \"eslint --config ./.eslintrc.precommit.js backend\" \"eslint --config ./.eslintrc.precommit.js frontend\"",
+    "lint": "eslint --config ./.eslintrc.precommit.js backend frontend",
     "server": "nodemon -r dotenv/config backend/server.js",
     "prepare": "husky install"
   },
@@ -19,8 +19,7 @@
     "frontend"
   ],
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "generate-password": "^1.6.1"
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
@@ -28,9 +27,6 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.2",
     "nodemon": "^2.0.4"
   }

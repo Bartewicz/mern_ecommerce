@@ -1,14 +1,13 @@
 module.exports = {
+  root: true,
   env: {
-    browser: true,
     es6: true,
     node: true,
   },
   extends: [
     'airbnb',
     'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'plugin:import/recommended',
     'plugin:react/recommended',
     'prettier',
   ],
@@ -21,7 +20,6 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react'],
   overrides: [
     {
       files: ['backend/*.js', 'backend/**/*.js'],

@@ -16,7 +16,8 @@
   },
   "workspaces": [
     "backend",
-    "frontend"
+    "frontend",
+    "shared"
   ],
   "dependencies": {
     "@mr-bean/shared": "file:shared",

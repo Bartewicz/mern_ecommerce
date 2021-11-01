@@ -1,7 +1,7 @@
-import { useCallback, useReducer, useState } from 'react'
+import { useCallback, useState } from 'react'
 
-import { addItem, increaseQuantityByAmount } from '../cart.actions'
-import { cartInitialState, cartReducer } from '../cart.reducer'
+import { useCart } from '../useCart.hook'
+import { CartContext } from '../useCartContext.hook'
 import { AddToCart } from './AddToCart'
 import { CountInStock } from './CountInStock'
 import { QuantitySpecifier } from './Quantity'
@@ -9,9 +9,8 @@ import { defaultsTo } from '@mr-bean/shared'
 import { byKeyAndValue } from 'utils'
 
 export function CartFactors({ productId, countInStock }) {
-  const [cart, dispatch] = useReducer(cartReducer, cartInitialState)
+  const { cart, addItem, increaseQuantityByAmount } = useCart(CartContext)
   const [amount, setAmount] = useState(1)
-
   const productInCart = defaultsTo(
     cart.items.find(byKeyAndValue({ productId })),
     {}
@@ -24,15 +23,15 @@ export function CartFactors({ productId, countInStock }) {
 
   const onAddToCart = useCallback(() => {
     if (maxAvailable - amount < amount) {
-      setAmount(maxAvailable - amount)
+      setAmount(maxAvailable - amount || 1)
     }
     if (cartQuantity === countInStock) return
     if (cartQuantity === 0) {
-      dispatch(addItem(productId, amount))
+      addItem({ amount, countInStock, productId })
       return
     }
-    dispatch(increaseQuantityByAmount(productId, amount))
-  }, [amount, cartQuantity, countInStock, dispatch, productId])
+    increaseQuantityByAmount({ productId, amount })
+  }, [amount, cartQuantity, countInStock, productId])
 
   return (
     <>

@@ -12,11 +12,8 @@ export function QuantitySpecifier({
   productId,
   setAmount,
 }) {
-  const decreaseDisabled = amount <= 1
-  const increaseDisabled =
-    alreadyInCart === 0
-      ? amount === countInStock
-      : countInStock - alreadyInCart - amount === 0
+  const isDecreaseDisabled = amount <= 1
+  const isIncreaseDisabled = countInStock - alreadyInCart - amount <= 0
 
   const onDecrease = () => setAmount((previous) => previous - 1)
   const onIncrease = () => setAmount((previous) => previous + 1)
@@ -25,7 +22,7 @@ export function QuantitySpecifier({
     <div className="d-inline-flex product-cart-factor">
       <QuantityButton
         onClick={onDecrease}
-        disabled={decreaseDisabled}
+        disabled={isDecreaseDisabled}
         variant="-"
       />
       <QuantityInput
@@ -36,7 +33,7 @@ export function QuantitySpecifier({
       />
       <QuantityButton
         onClick={onIncrease}
-        disabled={increaseDisabled}
+        disabled={isIncreaseDisabled}
         variant="+"
       />
     </div>

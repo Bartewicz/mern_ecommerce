@@ -1,4 +1,4 @@
-function ProductPrice({ price, size }) {
+export function PriceAndSize({ price, size }) {
   return (
     <div className="my-3">
       <h3 className="d-inline align-baseline">{`$${price}`}</h3>
@@ -6,5 +6,3 @@ function ProductPrice({ price, size }) {
     </div>
   )
 }
-
-export default ProductPrice

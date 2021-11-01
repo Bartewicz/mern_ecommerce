@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button } from 'react-bootstrap'
 
-function AddToCart({ disabled, onClick }) {
+export function AddToCart({ disabled, onClick }) {
   return (
     <Button
       onClick={onClick}
@@ -14,5 +14,3 @@ function AddToCart({ disabled, onClick }) {
     </Button>
   )
 }
-
-export default AddToCart

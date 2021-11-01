@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import { useHistory } from 'react-router-dom'
 
-function BackButton() {
+export function BackButton() {
   const { goBack } = useHistory()
 
   return (
@@ -15,5 +15,3 @@ function BackButton() {
     </Button>
   )
 }
-
-export default BackButton

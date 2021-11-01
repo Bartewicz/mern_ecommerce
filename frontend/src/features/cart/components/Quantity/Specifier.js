@@ -1,9 +1,9 @@
 import React from 'react'
 
-import QuantityButton from './Button'
-import QuantityInput from './Input'
+import { QuantityButton } from './Button'
+import { QuantityInput } from './Input'
 
-function QuantitySpecifier({
+export function QuantitySpecifier({
   amount,
   alreadyInCart,
   countInStock,
@@ -20,6 +20,7 @@ function QuantitySpecifier({
 
   const onDecrease = () => setAmount((previous) => previous - 1)
   const onIncrease = () => setAmount((previous) => previous + 1)
+
   return (
     <div className="d-inline-flex product-cart-factor">
       <QuantityButton
@@ -41,5 +42,3 @@ function QuantitySpecifier({
     </div>
   )
 }
-
-export default QuantitySpecifier

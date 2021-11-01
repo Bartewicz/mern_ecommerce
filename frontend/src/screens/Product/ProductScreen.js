@@ -5,11 +5,11 @@ import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
 import { useGetProductById } from '../../api/products.hooks'
-import BackButton from '../../components/BackButton'
+import { BackButton } from '../../components/BackButton'
 import { Spinner } from '../../components/Spinner'
-import MainInfo from './MainInfo'
+import { ProductMainInfo } from './MainInfo'
 
-function ProductScreen({ match }) {
+export function ProductScreen({ match }) {
   const { id } = match.params
 
   const { data: product } = useGetProductById(id)
@@ -31,7 +31,7 @@ function ProductScreen({ match }) {
           />
         </Col>
         <Col md={6}>
-          <MainInfo product={product} />
+          <ProductMainInfo product={product} />
         </Col>
       </Row>
 
@@ -41,5 +41,3 @@ function ProductScreen({ match }) {
     </Container>
   )
 }
-
-export default ProductScreen

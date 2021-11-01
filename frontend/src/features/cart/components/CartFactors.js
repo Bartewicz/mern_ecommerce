@@ -5,11 +5,11 @@ import { defaultsTo } from '@mr-bean/shared'
 import { byKeyAndValue } from '../../../utils'
 import { addItem, increaseQuantityByAmount } from '../cart.actions'
 import { cartInitialState, cartReducer } from '../cart.reducer'
-import AddToCart from './AddToCart'
-import CountInStock from './CountInStock'
-import Quantity from './Quantity'
+import { AddToCart } from './AddToCart'
+import { CountInStock } from './CountInStock'
+import { QuantitySpecifier } from './Quantity'
 
-function CartFactors({ productId, countInStock }) {
+export function CartFactors({ productId, countInStock }) {
   const [cart, dispatch] = useReducer(cartReducer, cartInitialState)
   const [amount, setAmount] = useState(1)
 
@@ -38,7 +38,7 @@ function CartFactors({ productId, countInStock }) {
   return (
     <>
       <div className="no-select d-inline-block mb-2">
-        <Quantity.Specifier
+        <QuantitySpecifier
           amount={amount}
           alreadyInCart={cartQuantity}
           countInStock={countInStock}
@@ -55,5 +55,3 @@ function CartFactors({ productId, countInStock }) {
     </>
   )
 }
-
-export default CartFactors

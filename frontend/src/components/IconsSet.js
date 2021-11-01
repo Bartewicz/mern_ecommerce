@@ -1,30 +1,30 @@
 import { memo } from 'react'
 
-function IconsSet({
-  maxIcons,
-  values,
-  typeToIconMap,
-  toTypeReducer,
-  containerTagName = 'span',
-  iconTagName = 'span',
-  containerClassNames = '',
-  iconClassNames = '',
-}) {
-  const Container = containerTagName
-  const Icon = iconTagName
+export const IconsSet = memo(
+  ({
+    maxIcons,
+    values,
+    typeToIconMap,
+    toTypeReducer,
+    containerTagName = 'span',
+    iconTagName = 'span',
+    containerClassNames = '',
+    iconClassNames = '',
+  }) => {
+    const Container = containerTagName
+    const Icon = iconTagName
 
-  const iconByType = (map) => {
-    return (type, key) => (
-      <Icon key={key} className={`${map[type]} ${iconClassNames}`} />
-    )
+    const iconByType = (map) => {
+      return (type, key) => (
+        <Icon key={key} className={`${map[type]} ${iconClassNames}`} />
+      )
+    }
+
+    const iconsSet = new Array(maxIcons)
+      .fill(undefined)
+      .reduce(toTypeReducer(values), [])
+      .map(iconByType(typeToIconMap))
+
+    return <Container className={containerClassNames}>{iconsSet}</Container>
   }
-
-  const iconsSet = new Array(maxIcons)
-    .fill(undefined)
-    .reduce(toTypeReducer(values), [])
-    .map(iconByType(typeToIconMap))
-
-  return <Container className={containerClassNames}>{iconsSet}</Container>
-}
-
-export default memo(IconsSet)
+)

@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { LinkContainer } from 'react-router-bootstrap'
 
-function Header() {
+export function Header() {
   return (
     <header role="banner">
       <Navbar
@@ -43,5 +43,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header

@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button'
 
-function QuantityButton({ variant, disabled, onClick }) {
+export function QuantityButton({ variant, disabled, onClick }) {
   return (
     <Button
       onClick={onClick}
@@ -13,5 +13,3 @@ function QuantityButton({ variant, disabled, onClick }) {
     </Button>
   )
 }
-
-export default QuantityButton

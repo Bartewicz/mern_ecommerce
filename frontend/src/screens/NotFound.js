@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import { Link } from 'react-router-dom'
 
-function NotFound() {
+export function NotFound() {
   return (
     <Container className="text-center">
       <Image
@@ -23,5 +23,3 @@ function NotFound() {
     </Container>
   )
 }
-
-export default NotFound

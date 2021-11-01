@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Form } from 'react-bootstrap'
 
-function QuantityInput({ productId, max, value, disabled }) {
+export function QuantityInput({ productId, max, value, disabled }) {
   return (
     <Form.Control
       id={`product-${productId}-quantity-input`}
@@ -16,5 +16,3 @@ function QuantityInput({ productId, max, value, disabled }) {
     />
   )
 }
-
-export default QuantityInput

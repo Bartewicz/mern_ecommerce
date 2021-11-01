@@ -1,7 +1,7 @@
-import IconsSet from '../IconsSet'
+import { IconsSet } from '../IconsSet'
 import { MAX_STARS, toStarTypes, typeToIconMap } from './Rating.utils'
 
-function Rating({ rating, reviewsNumber }) {
+export function Rating({ rating, reviewsNumber }) {
   return (
     <>
       <IconsSet
@@ -15,5 +15,3 @@ function Rating({ rating, reviewsNumber }) {
     </>
   )
 }
-
-export default Rating

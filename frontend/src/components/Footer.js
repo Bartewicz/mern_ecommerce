@@ -2,7 +2,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
-function Footer() {
+export function Footer() {
   return (
     <footer role="contentinfo">
       <Container>
@@ -13,5 +13,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

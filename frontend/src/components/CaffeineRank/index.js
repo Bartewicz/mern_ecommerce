@@ -1,1 +1,1 @@
-export { default } from './CaffeineRank'
+export { CaffeineRank } from './CaffeineRank'

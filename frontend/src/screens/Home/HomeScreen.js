@@ -1,9 +1,9 @@
 import Container from 'react-bootstrap/Container'
 
 import { useGetProducts } from '../../api/products.hooks'
-import ProductsGrid from '../../components/ProductsGrid'
+import { ProductsGrid } from '../../components/ProductsGrid'
 
-function HomeScreen() {
+export function HomeScreen() {
   const { data: products } = useGetProducts([])
 
   return (
@@ -13,5 +13,3 @@ function HomeScreen() {
     </Container>
   )
 }
-
-export default HomeScreen

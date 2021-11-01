@@ -1,11 +1,11 @@
-import IconsSet from '../IconsSet'
+import { IconsSet } from '../IconsSet'
 import {
   MAX_BEANS,
   toCoffeeBeanTypes,
   typeToIconMap,
 } from './CaffeineRank.utils'
 
-function CaffeineRank({ caffeineRank }) {
+export function CaffeineRank({ caffeineRank }) {
   return (
     <>
       <span>{'Coffeine: '}</span>
@@ -18,5 +18,3 @@ function CaffeineRank({ caffeineRank }) {
     </>
   )
 }
-
-export default CaffeineRank

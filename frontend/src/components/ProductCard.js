@@ -2,9 +2,9 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
-import Rating from './Rating'
+import { Rating } from './Rating'
 
-function Product({ product }) {
+export function ProductCard({ product }) {
   return (
     <Col sm={12} md={6} lg={4} xl={3}>
       <Card className="my-3 p-4 pb-1">
@@ -32,5 +32,3 @@ function Product({ product }) {
     </Col>
   )
 }
-
-export default Product

@@ -1,9 +1,9 @@
+import IconsSet from '../IconsSet'
 import {
   MAX_BEANS,
   toCoffeeBeanTypes,
   typeToIconMap,
 } from './CaffeineRank.utils'
-import IconsSet from './IconsSet'
 
 function CaffeineRank({ caffeineRank }) {
   return (

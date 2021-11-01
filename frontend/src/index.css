@@ -12,7 +12,9 @@ body {
   padding: 0;
 }
 
-.App {
+#App {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -61,6 +63,10 @@ main {
 
 .rating-stars {
   color: #f9a826;
+}
+
+.product-main-image {
+  object-fit: cover;
 }
 
 .product-quantity-btn {

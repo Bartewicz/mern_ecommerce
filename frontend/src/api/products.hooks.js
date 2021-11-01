@@ -9,12 +9,12 @@ const PRODUCTS_URL = `${config.REACT_APP_API_URL}/api/products`
 const allProducts = () => PRODUCTS_URL
 const productById = (id) => `${PRODUCTS_URL}/${id}`
 
-export function useGetProducts() {
+export function useGetProducts(initialData) {
   return useQuery(
     'products',
     () => axios.get(allProducts()).then(({ data }) => data),
     {
-      initialData: [],
+      initialData,
     }
   )
 }

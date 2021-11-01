@@ -4,7 +4,7 @@ import { useGetProducts } from '../../api/products.hooks'
 import ProductsGrid from '../../components/ProductsGrid'
 
 function HomeScreen() {
-  const { data: products } = useGetProducts()
+  const { data: products } = useGetProducts([])
 
   return (
     <Container>

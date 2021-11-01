@@ -3,6 +3,10 @@
   background-color: transparent;
 }
 
+.bg-dark {
+  background-color: #474747 !important;
+}
+
 .ml-1 {
   margin-left: 0.25rem !important;
 }

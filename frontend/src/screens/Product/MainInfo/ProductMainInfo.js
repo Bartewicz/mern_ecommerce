@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import CaffeineRank from '../../../components/CaffeineRank'
 import Rating from '../../../components/Rating'
-import CartFactors from './CartFactors'
+import CartFactors from '../../../features/cart/components/CartFactors'
 import PriceAndSize from './PriceAndSize'
 
 function ProductMainInfo({ product }) {

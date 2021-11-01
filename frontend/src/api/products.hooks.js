@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useQuery } from 'react-query/react'
 
 import { config } from '../config'
+import { byId } from '../utils'
 import { queryClient } from './client'
 
 const PRODUCTS_URL = `${config.REACT_APP_API_URL}/api/products`
@@ -29,8 +30,4 @@ export function useGetProductById(productId) {
       },
     }
   )
-}
-
-function byId(id) {
-  return (item) => item._id === id
 }

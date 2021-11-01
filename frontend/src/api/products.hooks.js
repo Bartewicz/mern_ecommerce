@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useQuery } from 'react-query/react'
 
+import { config } from '../config'
 import { queryClient } from './client'
 
-const PRODUCTS_URL = 'http://localhost:5000/api/products'
+const PRODUCTS_URL = `${config.REACT_APP_API_URL}/api/products`
 
 const allProducts = () => PRODUCTS_URL
 const productById = (id) => `${PRODUCTS_URL}/${id}`

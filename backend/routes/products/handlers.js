@@ -1,7 +1,7 @@
+import { isNullOrUndefined } from '@mr-bean/shared'
 import mongoose from 'mongoose'
 
 import { Product } from '../../models/Product.js'
-import { isNullOrUndefined } from '../../utilities/utils.js'
 
 const { isValidObjectId } = mongoose
 

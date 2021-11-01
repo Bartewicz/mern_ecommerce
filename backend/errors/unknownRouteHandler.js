@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import logger from '../utilities/logger.js'
+import logger from '../utils/logger.js'
 
 export function unknownRouteHandler(request, response, next) {
   const { originalUrl, method } = request

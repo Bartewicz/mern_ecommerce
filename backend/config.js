@@ -1,14 +1,20 @@
-import { defaultsTo } from './utilities/utils.js'
+import { defaultsTo } from '@mr-bean/shared'
 
 const defaultConfig = {
+  CLIENT_ORIGIN_URL: 'http://localhost:3000',
   HOSTNAME: 'localhost',
   NODE_ENV: 'development',
   PORT: 5000,
 }
 
-const { EXPRESS_APP_HOSTNAME, EXPRESS_APP_PORT, NODE_ENV } = process.env
+const { CLIENT_ORIGIN_URL, EXPRESS_APP_HOSTNAME, EXPRESS_APP_PORT, NODE_ENV } =
+  process.env
 
 export const config = Object.freeze({
+  CLIENT_ORIGIN_URL: defaultsTo(
+    CLIENT_ORIGIN_URL,
+    defaultConfig.CLIENT_ORIGIN_URL
+  ),
   HOSTNAME: defaultsTo(EXPRESS_APP_HOSTNAME, defaultConfig.HOSTNAME),
   MONGO_URI: process.env.MONGO_URI,
   NODE_ENV: defaultsTo(NODE_ENV, defaultConfig.NODE_ENV),
@@ -17,10 +23,6 @@ export const config = Object.freeze({
 
 export function composeCorsOptions() {
   return {
-    origin: isDevEnv() ? 'http://localhost:3000' : config.origin,
+    origin: config.CLIENT_ORIGIN_URL,
   }
-}
-
-export function isDevEnv() {
-  return config.NODE_ENV === 'development'
 }

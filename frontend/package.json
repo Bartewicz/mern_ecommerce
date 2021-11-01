@@ -1,9 +1,10 @@
 {
-  "name": "kaffka-client",
-  "description": "A React.js client application for Kaffka - coffee webstore.",
+  "name": "mr-bean-client",
+  "description": "A React.js client application for Mr. Bean - coffee webstore.",
   "private": true,
   "proxy": "http://127.0.0.1:5000",
   "dependencies": {
+    "@mr-bean/shared": "file:shared",
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

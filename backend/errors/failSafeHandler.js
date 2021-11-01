@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { config } from '../config.js'
-import logger from '../utilities/logger.js'
+import logger from '../utils/logger.js'
 
 const DEFAULT_ERROR_MSG = 'Unhandled error exception'
 

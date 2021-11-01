@@ -1,6 +1,6 @@
 {
-  "name": "kaffka-server",
-  "description": "A Node.js server application for Kaffka - coffee webstore.",
+  "name": "mr-bean-server",
+  "description": "A Node.js server application for Mr. Bean - coffee webstore.",
   "private": true,
   "main": "server.js",
   "type": "module",
@@ -13,7 +13,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "generate-password": "^1.6.1",
-    "mongoose": "^6.0.10"
+    "mongoose": "^6.0.10",
+    "@mr-bean/shared": "file:shared"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

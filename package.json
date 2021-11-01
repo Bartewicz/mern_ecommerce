@@ -1,5 +1,5 @@
 {
-  "name": "kaffka",
+  "name": "mrbean-mern-playground",
   "version": "0.1.0",
   "author": "Bartosz Wojtalewicz (https://github.com/Bartewicz)",
   "description": "A MERN eCommerce (coffee webstore) platform build from scratch.",
@@ -19,6 +19,7 @@
     "frontend"
   ],
   "dependencies": {
+    "@mr-bean/shared": "file:shared",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {

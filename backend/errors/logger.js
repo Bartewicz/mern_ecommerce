@@ -1,5 +1,5 @@
 import { config } from '../config.js'
-import logger from '../utilities/logger.js'
+import logger from '../utils/logger.js'
 
 export function errorLogger(error, req, res, next) {
   logger.error(error.message)

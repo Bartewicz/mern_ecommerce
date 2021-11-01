@@ -7,8 +7,8 @@ import { failSafeHandler } from './errors/failSafeHandler.js'
 import { errorLogger } from './errors/logger.js'
 import { unknownRouteHandler } from './errors/unknownRouteHandler.js'
 import { router } from './routes/router.js'
-import logger from './utilities/logger.js'
-import { requestLogger } from './utilities/requestLogger.js'
+import logger from './utils/logger.js'
+import { requestLogger } from './utils/requestLogger.js'
 
 const { HOSTNAME, PORT, NODE_ENV } = config
 

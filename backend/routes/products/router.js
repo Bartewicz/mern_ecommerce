@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { asyncHandler } from '../../utilities/asyncHandler.js'
+import { asyncHandler } from '../../utils/asyncHandler.js'
 import { getProductById, getProducts } from './handlers.js'
 
 const router = new Router()

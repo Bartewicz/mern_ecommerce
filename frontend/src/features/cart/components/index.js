@@ -1,4 +1,6 @@
 export { AddToCart } from './AddToCart'
+export { CartFactors } from './CartFactors'
+export { CountInStock } from './CountInStock'
 export { QuantityButton } from './Quantity'
 export { QuantityInput } from './Quantity'
 export { QuantitySpecifier } from './Quantity'

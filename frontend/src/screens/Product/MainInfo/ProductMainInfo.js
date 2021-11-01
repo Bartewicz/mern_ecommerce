@@ -1,4 +1,4 @@
-import ListGroup from 'react-bootstrap/ListGroup'
+import { ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { PriceAndSize } from './PriceAndSize'

@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container'
+import { Container } from 'react-bootstrap'
 
 import { useGetProducts } from 'api/products.hooks'
 import { ProductsGrid } from 'components/ProductsGrid'

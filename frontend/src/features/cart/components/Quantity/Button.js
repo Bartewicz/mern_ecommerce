@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button'
+import { Button } from 'react-bootstrap'
 
 export function QuantityButton({ variant, disabled, onClick }) {
   return (

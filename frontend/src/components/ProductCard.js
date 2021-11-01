@@ -1,5 +1,4 @@
-import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
+import { Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { Rating } from './Rating'

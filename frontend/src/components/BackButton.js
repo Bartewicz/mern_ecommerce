@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button'
+import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 
 export function BackButton() {

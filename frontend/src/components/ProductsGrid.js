@@ -1,4 +1,4 @@
-import Row from 'react-bootstrap/Row'
+import { Row } from 'react-bootstrap'
 
 import { ProductCard } from './ProductCard'
 

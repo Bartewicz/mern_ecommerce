@@ -1,7 +1,4 @@
-import Container from 'react-bootstrap/Container'
-import Image from 'react-bootstrap/Image'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
+import { Container, Image, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 export function Header() {

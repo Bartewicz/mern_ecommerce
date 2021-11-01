@@ -1,13 +1,13 @@
-import { isNullOrUndefined } from '@mr-bean/shared'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row'
 
-import { useGetProductById } from '../../api/products.hooks'
-import { BackButton } from '../../components/BackButton'
-import { Spinner } from '../../components/Spinner'
 import { ProductMainInfo } from './MainInfo'
+import { isNullOrUndefined } from '@mr-bean/shared'
+import { useGetProductById } from 'api/products.hooks'
+import { BackButton } from 'components/BackButton'
+import { Spinner } from 'components/Spinner'
 
 export function ProductScreen({ match }) {
   const { id } = match.params

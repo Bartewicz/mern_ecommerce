@@ -20,12 +20,16 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  plugins: ['react'],
   overrides: [
     {
       files: ['backend/*.js', 'backend/**/*.js'],
       rules: { 'import/extensions': ['error', 'always'] },
     },
   ],
+  settings: {
+    'import/internal-regex': /@mr-bean\//,
+  },
   rules: {
     'arrow-body-style': 'off',
     'comma-dangle': [
@@ -44,14 +48,50 @@ module.exports = {
       'error',
       {
         groups: [
-          ['builtin', 'external', 'internal'],
+          'builtin',
+          ['external', 'internal'],
           ['parent', 'sibling', 'index'],
         ],
         pathGroups: [
           {
+            pattern: '@mr-bean/**',
+            group: 'parent',
+          },
+          {
             pattern: 'react',
-            group: 'external',
-            position: 'before',
+            group: 'builtin',
+          },
+          {
+            pattern: 'react-**',
+            group: 'builtin',
+          },
+          {
+            pattern: 'react-**/**',
+            group: 'builtin',
+          },
+          {
+            pattern: '@mr-bean/**',
+            group: 'parent',
+          },
+          {
+            pattern: 'models/**',
+            group: 'parent',
+          },
+          {
+            pattern: 'api/**',
+            group: 'parent',
+          },
+          {
+            pattern: 'components/**',
+            group: 'parent',
+          },
+          {
+            pattern: 'features/**',
+            group: 'parent',
+          },
+          {
+            pattern: 'utils',
+            group: 'parent',
           },
         ],
         pathGroupsExcludedImportTypes: ['react'],
@@ -62,11 +102,6 @@ module.exports = {
         },
       },
     ],
-    'no-debugger': 'warn',
-    'no-underscore-dangle': 'off',
-    'no-unused-vars': 'warn',
-    'no-use-before-define': ['error', { functions: false, classes: true }],
-    'object-curly-newline': 'off',
     'react/jsx-curly-brace-presence': [
       'warn',
       { props: 'never', children: 'always' },
@@ -75,6 +110,11 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'no-debugger': 'warn',
+    'no-underscore-dangle': 'off',
+    'no-unused-vars': 'warn',
+    'no-use-before-define': ['error', { functions: false, classes: true }],
+    'object-curly-newline': 'off',
     semi: ['error', 'never'],
   },
 }

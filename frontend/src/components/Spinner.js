@@ -1,5 +1,4 @@
 import { memo } from 'react'
-
 import { Spinner as BootstrapSpinner } from 'react-bootstrap'
 
 export const Spinner = memo(({ centered }) => {

@@ -5,5 +5,11 @@ module.exports = {
     es6: true,
   },
   parser: 'babel-eslint',
-  plugins: ['react'],
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
+  },
 }

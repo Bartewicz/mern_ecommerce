@@ -1,13 +1,12 @@
 import { useCallback, useReducer, useState } from 'react'
 
-import { defaultsTo } from '@mr-bean/shared'
-
-import { byKeyAndValue } from '../../../utils'
 import { addItem, increaseQuantityByAmount } from '../cart.actions'
 import { cartInitialState, cartReducer } from '../cart.reducer'
 import { AddToCart } from './AddToCart'
 import { CountInStock } from './CountInStock'
 import { QuantitySpecifier } from './Quantity'
+import { defaultsTo } from '@mr-bean/shared'
+import { byKeyAndValue } from 'utils'
 
 export function CartFactors({ productId, countInStock }) {
   const [cart, dispatch] = useReducer(cartReducer, cartInitialState)

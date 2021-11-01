@@ -1,9 +1,10 @@
-import axios from 'axios'
 import { useQuery } from 'react-query/react'
 
+import axios from 'axios'
+
 import { config } from '../config'
-import { byId } from '../utils'
 import { queryClient } from './client'
+import { byId } from 'utils'
 
 const PRODUCTS_URL = `${config.REACT_APP_API_URL}/api/products`
 

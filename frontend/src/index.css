@@ -69,6 +69,10 @@ main {
   object-fit: cover;
 }
 
+.product-cart-factor {
+  width: 11.4rem;
+}
+
 .product-quantity-btn {
   font-size: 1.3rem;
   height: 2.7rem;
@@ -86,8 +90,4 @@ main {
 
 .product-quantity-input:disabled, .product-quantity-input[readonly] {
   background-color: transparent;
-}
-
-.product-cart-factor {
-  width: 11.4rem;
 }

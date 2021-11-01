@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button'
 
-function QuantityButton({ label, disabled, onClick }) {
+function QuantityButton({ variant, disabled, onClick }) {
   return (
     <Button
       onClick={onClick}
@@ -9,7 +9,7 @@ function QuantityButton({ label, disabled, onClick }) {
       size="sm"
       className="product-quantity-btn"
     >
-      {label}
+      {variant}
     </Button>
   )
 }

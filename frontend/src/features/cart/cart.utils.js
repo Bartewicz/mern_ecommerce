@@ -1,7 +1,7 @@
-export function bySameId(productId) {
+export function byId(productId) {
   return (item) => item.productId === productId
 }
 
-export function byDifferentId(productId) {
+export function byNotEqualId(productId) {
   return (item) => item.productId !== productId
 }

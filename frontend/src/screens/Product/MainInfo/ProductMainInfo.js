@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import CaffeineRank from '../../../components/CaffeineRank'
 import Rating from '../../../components/Rating'
 import CartFactors from './CartFactors'
+import PriceAndSize from './PriceAndSize'
 
 function ProductMainInfo({ product }) {
   return (
@@ -27,6 +28,7 @@ function ProductMainInfo({ product }) {
         <span>{`Type: ${product.type}`}</span>
       </ListGroup.Item>
       <ListGroup.Item>
+        <PriceAndSize price={product.price} size={product.size} />
         <CartFactors
           price={product.price}
           size={product.size}

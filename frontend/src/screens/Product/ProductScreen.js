@@ -18,6 +18,7 @@ export function ProductScreen({ match }) {
   return (
     <Container>
       <BackButton />
+      <h1 className="py-3">{product.name}</h1>
       <Row>
         <Col md={6} className="d-flex justify-content-center">
           <Image

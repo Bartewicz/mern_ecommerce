@@ -4,7 +4,7 @@ import { isNullOrUndefined } from '@mr-bean/shared'
 import { useGetProducts } from 'api/products.hooks'
 import { BackButton } from 'components/BackButton'
 import { Spinner } from 'components/Spinner'
-import { QuantitySpecifier } from 'features/cart/components'
+import { CountInStock, QuantitySpecifier } from 'features/cart/components'
 import { useCart } from 'features/cart/useCart.hook'
 import { CartContext } from 'features/cart/useCartContext.hook'
 import { byId } from 'utils'
@@ -49,6 +49,7 @@ export const CartScreen = () => {
                 onDecrease={() => decreaseQuantity({ productId })}
                 onIncrease={() => increaseQuantity({ productId })}
               />
+              <CountInStock countInStock={product.countInStock} />
             </Col>
             <Col md={1}>
               <CloseButton onClick={() => removeItem({ productId })} />

@@ -1,7 +1,8 @@
+import { memo } from 'react'
 import { Container, Image, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
-export function Header() {
+export const Header = memo(() => {
   return (
     <header role="banner">
       <Navbar
@@ -39,4 +40,4 @@ export function Header() {
       </Navbar>
     </header>
   )
-}
+})

@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
-export function Footer() {
+export const Footer = memo(() => {
   return (
     <footer role="contentinfo">
       <Container>
@@ -10,4 +11,4 @@ export function Footer() {
       </Container>
     </footer>
   )
-}
+})

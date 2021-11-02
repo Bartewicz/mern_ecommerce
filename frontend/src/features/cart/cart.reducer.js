@@ -6,7 +6,7 @@ import {
   INCREASE_QUANTITY,
   INCREASE_QUANTITY_BY_AMOUNT,
 } from './cart.actions'
-import { byNotEqualId } from './cart.utils'
+import { byNotEqualId } from 'utils'
 
 export const cartInitialState = {
   items: [],

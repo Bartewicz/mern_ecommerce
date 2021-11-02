@@ -2,9 +2,8 @@ export function byId(id) {
   return (item) => item._id === id
 }
 
-export function byKeyAndValue(object) {
-  const [key, value] = Object.entries(object)[0]
-  return (item) => item[key] === value
+export function byNotEqualId(id) {
+  return (item) => item._id !== id
 }
 
 export function isString(value) {
@@ -13,4 +12,8 @@ export function isString(value) {
 
 export function joinClassNames(...classes) {
   return classes.filter(isString).join(' ')
+}
+
+export function returnData({ data }) {
+  return data
 }

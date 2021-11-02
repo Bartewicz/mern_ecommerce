@@ -3,7 +3,7 @@ import { createContext, useMemo, useReducer } from 'react'
 
 import produce from 'immer'
 
-import { byNotEqualId, byId } from './cart.utils'
+import { byId, byNotEqualId } from 'utils'
 
 export const CartContext = createContext()
 
@@ -13,8 +13,8 @@ const initialState = {
 
 const cartRecipes = {
   addItem: (action) => (draft) => {
-    const { productId, countInStock, amount } = action
-    draft.items.push({ productId, countInStock, quantity: amount })
+    const { productId: _id, countInStock, amount: quantity } = action
+    draft.items.push({ _id, countInStock, quantity })
   },
   removeItem: (action) => (draft) => {
     draft.items = draft.items.filter(byNotEqualId(action.productId))

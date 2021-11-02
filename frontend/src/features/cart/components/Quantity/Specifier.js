@@ -7,16 +7,14 @@ export function QuantitySpecifier({
   amount,
   alreadyInCart,
   countInStock,
+  isOutOfStock = false,
   maxAvailable,
-  isOutOfStock,
   productId,
-  setAmount,
+  onDecrease,
+  onIncrease,
 }) {
   const isDecreaseDisabled = amount <= 1
   const isIncreaseDisabled = countInStock - alreadyInCart - amount <= 0
-
-  const onDecrease = () => setAmount((previous) => previous - 1)
-  const onIncrease = () => setAmount((previous) => previous + 1)
 
   return (
     <div className="d-inline-flex product-cart-factor">

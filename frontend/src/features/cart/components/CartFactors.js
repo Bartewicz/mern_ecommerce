@@ -6,20 +6,20 @@ import { AddToCart } from './AddToCart'
 import { CountInStock } from './CountInStock'
 import { QuantitySpecifier } from './Quantity'
 import { defaultsTo } from '@mr-bean/shared'
-import { byKeyAndValue } from 'utils'
+import { byId } from 'utils'
 
 export function CartFactors({ productId, countInStock }) {
   const { cart, addItem, increaseQuantityByAmount } = useCart(CartContext)
   const [amount, setAmount] = useState(1)
-  const productInCart = defaultsTo(
-    cart.items.find(byKeyAndValue({ productId })),
-    {}
-  )
+  const productInCart = defaultsTo(cart.items.find(byId(productId)), {})
   const cartQuantity = defaultsTo(productInCart.quantity, 0)
 
   const isOutOfStock = countInStock === 0
   const maxAvailable = countInStock - cartQuantity
   const isAddDisabled = isOutOfStock || cartQuantity === countInStock
+
+  const onDecrease = () => setAmount((previous) => previous - 1)
+  const onIncrease = () => setAmount((previous) => previous + 1)
 
   const onAddToCart = useCallback(() => {
     if (maxAvailable - amount < amount) {
@@ -43,7 +43,8 @@ export function CartFactors({ productId, countInStock }) {
           maxAvailable={maxAvailable}
           isOutOfStock={isOutOfStock}
           productId={productId}
-          setAmount={setAmount}
+          onDecrease={onDecrease}
+          onIncrease={onIncrease}
         />
         <CountInStock countInStock={countInStock} />
       </div>

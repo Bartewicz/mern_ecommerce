@@ -17,3 +17,7 @@ export function joinClassNames(...classes) {
 export function returnData({ data }) {
   return data
 }
+
+export function isSuccess(status) {
+  return status === 'success'
+}

@@ -19,8 +19,16 @@
   margin-right: 1.5rem !important;
 }
 
+.pb-3 {
+  padding-bottom: 1rem !important;
+}
+
 .btn-outline-primary.disabled, .btn-outline-primary:disabled, fieldset:disabled .btn-outline-primary {
   border-color: #ced4da;
   color: #ced4da;
   opacity: 1 !important;
+}
+
+.btn-close:hover {
+  background-color: transparent;
 }

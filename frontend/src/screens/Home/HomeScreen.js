@@ -1,9 +1,9 @@
 import { Container } from 'react-bootstrap'
 
 import { isNullOrUndefined } from '@mr-bean/shared'
-import { useGetProducts } from 'api/products.hooks'
 import { ProductsGrid } from 'components/ProductsGrid'
 import { Spinner } from 'components/Spinner'
+import { useGetProducts } from 'features/products/api/products.hooks'
 
 export function HomeScreen() {
   const { data: products } = useGetProducts()

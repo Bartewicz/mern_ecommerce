@@ -4,7 +4,7 @@ export function AddToCart({ disabled, onClick }) {
   return (
     <Button
       onClick={onClick}
-      className="product-cart-factor btn-block d-block"
+      className="product-cart-factor btn-block d-inline-block"
       disabled={disabled}
       type="button"
     >

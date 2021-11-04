@@ -2,9 +2,9 @@ import { Col, Container, Image, Row } from 'react-bootstrap'
 
 import { ProductMainInfo } from './MainInfo'
 import { isNullOrUndefined } from '@mr-bean/shared'
-import { useGetProductById } from 'api/products.hooks'
 import { BackButton } from 'components/BackButton'
 import { Spinner } from 'components/Spinner'
+import { useGetProductById } from 'features/products/api/products.hooks'
 
 export function ProductScreen({ match }) {
   const { id } = match.params

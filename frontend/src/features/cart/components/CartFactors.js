@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react'
 
-import { useCart } from '../useCart.hook'
-import { CartContext } from '../useCartContext.hook'
+import { CartContext, useCart } from '../useCartContext.hook'
 import { AddToCart } from './AddToCart'
+import { CountInCart } from './CountInCart'
 import { CountInStock } from './CountInStock'
 import { QuantitySpecifier } from './Quantity'
 import { defaultsTo } from '@mr-bean/shared'
@@ -35,21 +35,24 @@ export function CartFactors({ productId, countInStock }) {
 
   return (
     <>
-      <div className="no-select d-inline-block mb-2">
-        <QuantitySpecifier
-          amount={amount}
-          alreadyInCart={cartQuantity}
-          countInStock={countInStock}
-          maxAvailable={maxAvailable}
-          isOutOfStock={isOutOfStock}
-          productId={productId}
-          onDecrease={onDecrease}
-          onIncrease={onIncrease}
-        />
-        <CountInStock countInStock={countInStock} />
+      <div className="no-select d-flex mb-2">
+        <div className="d-flex align-items-center">
+          <QuantitySpecifier
+            amount={amount}
+            alreadyInCart={cartQuantity}
+            countInStock={countInStock}
+            maxAvailable={maxAvailable}
+            isOutOfStock={isOutOfStock}
+            productId={productId}
+            onDecrease={onDecrease}
+            onIncrease={onIncrease}
+          />
+          <CountInStock count={countInStock} />
+        </div>
       </div>
-      <div className="d-inline-flex product-cart-factor">
+      <div className="d-flex align-items-center">
         <AddToCart disabled={isAddDisabled} onClick={onAddToCart} />
+        <CountInCart count={cartQuantity} />
       </div>
     </>
   )

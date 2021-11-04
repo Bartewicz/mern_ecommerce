@@ -17,7 +17,7 @@ export function QuantitySpecifier({
   const isIncreaseDisabled = countInStock - alreadyInCart - amount <= 0
 
   return (
-    <div className="d-inline-flex product-cart-factor">
+    <div className="product-cart-factor d-inline-flex">
       <QuantityButton
         onClick={onDecrease}
         disabled={isDecreaseDisabled}

@@ -5,9 +5,9 @@ import {
   typeToIconMap,
 } from './CaffeineRank.utils'
 
-export function CaffeineRank({ caffeineRank }) {
+export function CaffeineRank({ caffeineRank, className }) {
   return (
-    <>
+    <div className={className}>
       <span>{'Coffeine: '}</span>
       <IconsSet
         maxIcons={MAX_BEANS}
@@ -15,6 +15,6 @@ export function CaffeineRank({ caffeineRank }) {
         toTypeReducer={toCoffeeBeanTypes}
         values={caffeineRank}
       />
-    </>
+    </div>
   )
 }

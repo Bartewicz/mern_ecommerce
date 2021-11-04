@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import { QueryClientProvider } from 'react-query/react'
 
-import { queryClient } from './api/client'
+import { queryClient } from './apiClient'
 import { App } from './App'
 import './bootstrap.polyfill.css'
 import './font-awesome.override.css'

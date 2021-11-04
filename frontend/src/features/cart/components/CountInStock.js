@@ -1,6 +1,7 @@
-export function CountInStock({ countInStock }) {
-  const available =
-    countInStock === 0 ? 'Out of stock' : `${countInStock} available`
+import { memo } from 'react'
 
-  return <span className="ml-2">{available}</span>
-}
+export const CountInStock = memo(({ count }) => {
+  const label = count === 0 ? 'Out of stock' : `In stock: ${count}`
+
+  return <span className="ml-2 mb-0">{label}</span>
+})

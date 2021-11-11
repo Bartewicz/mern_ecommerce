@@ -5,8 +5,6 @@ import { QuantityInput } from './Input'
 
 export function QuantitySpecifier({
   amount,
-  alreadyInCart,
-  countInStock,
   isOutOfStock = false,
   maxAvailable,
   productId,
@@ -14,10 +12,10 @@ export function QuantitySpecifier({
   onIncrease,
 }) {
   const isDecreaseDisabled = amount <= 1
-  const isIncreaseDisabled = countInStock - alreadyInCart - amount <= 0
+  const isIncreaseDisabled = maxAvailable - amount <= 0
 
   return (
-    <div className="product-cart-factor d-inline-flex">
+    <div className="product-cart-factor d-inline-flex no-select">
       <QuantityButton
         onClick={onDecrease}
         disabled={isDecreaseDisabled}

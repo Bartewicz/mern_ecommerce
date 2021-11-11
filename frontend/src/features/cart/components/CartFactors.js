@@ -35,7 +35,7 @@ export function CartFactors({ productId, countInStock }) {
 
   return (
     <>
-      <div className="no-select d-flex mb-2">
+      <div className="d-flex mb-2">
         <div className="d-flex align-items-center">
           <QuantitySpecifier
             amount={amount}

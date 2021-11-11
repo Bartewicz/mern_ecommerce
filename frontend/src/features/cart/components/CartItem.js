@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { Col, Image, ListGroupItem } from 'react-bootstrap'
+import { Col, FormCheck, Image, ListGroupItem } from 'react-bootstrap'
 
 import { CartContext } from '../useCart.hook'
 import { isNullOrUndefined } from '@mr-bean/shared'
@@ -9,13 +9,17 @@ import { CountInStock, QuantitySpecifier } from 'features/cart/components'
 import { useGetProductById } from 'features/products/api/products.hooks'
 import { byId } from 'utils'
 
-export function CartItem({ productId }) {
+export function CartItem({ productId, onToggleChecked }) {
   const { cart, decreaseQuantity, increaseQuantity, removeItem } =
     useContext(CartContext)
-  const { quantity } = cart.items.find(byId(productId))
-  const [amount, setAmount] = useState(quantity)
+  const { quantity: alreadyInCart, countInStock } = cart.items.find(
+    byId(productId)
+  )
+  const [amount, setAmount] = useState(alreadyInCart)
 
   const { data: product } = useGetProductById(productId)
+
+  const maxAvailable = countInStock - alreadyInCart
 
   if (isNullOrUndefined(product)) {
     return null
@@ -33,7 +37,12 @@ export function CartItem({ productId }) {
 
   return (
     <ListGroupItem className="row d-flex align-items-center p-4">
-      <Col sm={3} className="d-flex justify-content-center">
+      <Col sm={3} className="d-flex align-items-center justify-content-center">
+        <FormCheck
+          id={`cart-item-checkbox-${productId}`}
+          onChange={() => onToggleChecked(productId)}
+          type="checkbox"
+        />
         <Image
           className="cart-item-image"
           src={product.image}
@@ -46,10 +55,8 @@ export function CartItem({ productId }) {
         <span>{product.brand}</span>
         <CaffeineRank caffeineRank={product.caffeine} className="mb-2" />
         <QuantitySpecifier
-          alreadyInCart={quantity}
           amount={amount}
-          countInStock={product.countInStock}
-          maxAvailable={product.countInStock}
+          maxAvailable={maxAvailable}
           productId={productId}
           onDecrease={onDecrease}
           onIncrease={onIncrease}

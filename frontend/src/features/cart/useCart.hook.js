@@ -13,22 +13,32 @@ const initialState = {
 
 const cartRecipes = {
   addItem: (action) => (draft) => {
-    const { productId: _id, countInStock, amount: quantity } = action
+    const { productId: _id, countInStock, amount: quantity } = action.payload
     draft.items.push({ _id, countInStock, quantity })
   },
   removeItem: (action) => (draft) => {
-    draft.items = draft.items.filter(byNotEqualId(action.productId))
+    const { productId } = action.payload
+    draft.items = draft.items.filter(byNotEqualId(productId))
+  },
+  removeMultiple: (action) => (draft) => {
+    const { ids: idsToBeRemoved } = action.payload
+    draft.items = draft.items.filter(({ _id }) => !idsToBeRemoved.includes(_id))
+  },
+  removeAll: () => (draft) => {
+    draft.items = []
   },
   decreaseQuantity: (action) => (draft) => {
-    const product = draft.items.find(byId(action.productId))
+    const { productId } = action.payload
+    const product = draft.items.find(byId(productId))
     if (product.quantity > 1) product.quantity -= 1
   },
   increaseQuantity: (action) => (draft) => {
-    const product = draft.items.find(byId(action.productId))
+    const { productId } = action.payload
+    const product = draft.items.find(byId(productId))
     if (product.quantity < product.countInStock) product.quantity += 1
   },
   increaseQuantityByAmount: (action) => (draft) => {
-    const { productId, amount } = action
+    const { productId, amount } = action.payload
     const product = draft.items.find(byId(productId))
     if (product.quantity + amount <= product.countInStock) {
       product.quantity += amount
@@ -38,7 +48,7 @@ const cartRecipes = {
 
 function createReducer(recipes) {
   return (state, action) => {
-    return produce(state, recipes[action.type](action.payload))
+    return produce(state, recipes[action.type](action))
   }
 }
 
@@ -53,10 +63,18 @@ const cartReducer = createReducer(cartRecipes)
 
 export function useCart() {
   const [state, dispatch] = useReducer(cartReducer, initialState)
+  const isCartEmpty = useMemo(() => state.items.length === 0, [state])
   const actions = useMemo(
     () => composeActions(cartRecipes, dispatch),
     [dispatch]
   )
 
-  return useMemo(() => ({ ...actions, cart: state }), [actions, state])
+  return useMemo(
+    () => ({
+      ...actions,
+      isCartEmpty,
+      cart: state,
+    }),
+    [actions, state]
+  )
 }

@@ -53,7 +53,9 @@ main {
   bottom: 0;
   color: white;
   display: flex;
-  font-size: 0.8rem;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 0.7rem;
+  font-weight: bold;
   justify-content: center;
   min-width: 1.3rem;
   padding: 0.2rem;
@@ -62,11 +64,15 @@ main {
 }
 
 .cart-items-badge--left {
-  left: -50%;
+  left: -60%;
 }
 
 .cart-items-badge--right {
   right: -50%;
+}
+
+.empty-cart-icon {
+  max-width: 26rem;
 }
 
 .no-select {

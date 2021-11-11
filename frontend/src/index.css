@@ -50,15 +50,23 @@ main {
   align-items: center;
   background-color: coral;
   border-radius: 1.3rem;
+  bottom: 0;
   color: white;
   display: flex;
   font-size: 0.8rem;
-  padding: 0.2rem;
   justify-content: center;
-  right: 50%;
   min-width: 1.3rem;
+  padding: 0.2rem;
   position: absolute;
-  top: 50%;
+  transform: translateY(50%);
+}
+
+.cart-items-badge--left {
+  left: -50%;
+}
+
+.cart-items-badge--right {
+  right: -50%;
 }
 
 .no-select {

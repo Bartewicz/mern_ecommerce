@@ -2,6 +2,7 @@ import { memo, useContext } from 'react'
 import { Container, Image, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
+import { Badge } from './Badge'
 import { CartContext } from 'features/cart/useCart.hook'
 
 export const Header = memo(() => {
@@ -24,12 +25,8 @@ export const Header = memo(() => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link className="mr-4">
-                  <span className="fas fa-shopping-cart position-relative">
-                    {hasCartItems ? (
-                      <strong className="cart-items-badge">
-                        {itemsInCart}
-                      </strong>
-                    ) : null}
+                  <span className="fas fa-shopping-cart">
+                    <Badge value={itemsInCart} visible={hasCartItems} />
                   </span>
                   {'Cart'}
                 </Nav.Link>

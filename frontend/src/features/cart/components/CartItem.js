@@ -9,7 +9,7 @@ import { CountInStock, QuantitySpecifier } from 'features/cart/components'
 import { useGetProductById } from 'features/products/api/products.hooks'
 import { byId } from 'utils'
 
-export function CartItem({ productId, onToggleChecked }) {
+export function CartItem({ productId, checked, onToggleChecked }) {
   const { cart, decreaseQuantity, increaseQuantity, removeItem } =
     useContext(CartContext)
   const { quantity: alreadyInCart, countInStock } = cart.items.find(
@@ -41,6 +41,7 @@ export function CartItem({ productId, onToggleChecked }) {
         <FormCheck
           id={`cart-item-checkbox-${productId}`}
           onChange={() => onToggleChecked(productId)}
+          checked={checked}
           type="checkbox"
         />
         <Image

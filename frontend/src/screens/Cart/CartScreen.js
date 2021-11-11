@@ -1,4 +1,4 @@
-import { useContext, useCallback, useState, useRef } from 'react'
+import { useContext, useCallback, useState, useRef, useEffect } from 'react'
 import { Button, Container, FormCheck, ListGroup } from 'react-bootstrap'
 
 import { EmptyCartPlaceholder } from './EmptyCartPlaceholder'
@@ -12,9 +12,16 @@ export function CartScreen() {
     useContext(CartContext)
   const [checked, setChecked] = useState([])
   const checkboxGroupRef = useRef(null)
-
   const isNoneChecked = checked.length === 0
 
+  const toggleAllChecked = useCallback(() => {
+    if (checked.length < cart.items.length) {
+      const all = cart.items.map(({ _id }) => _id)
+      setChecked(all)
+      return
+    }
+    setChecked([])
+  })
   const toggleChecked = useCallback((productId) => {
     if (checked.includes(productId)) {
       setChecked(checked.filter(byId(productId)))
@@ -24,7 +31,20 @@ export function CartScreen() {
   })
   const onPartialRemove = () => {
     removeMultiple({ ids: checked })
+    setChecked([])
   }
+
+  useEffect(() => {
+    if (cart.items.length === 0 || checked.length === 0) {
+      checkboxGroupRef.current.checked = false
+      return
+    }
+    if (cart.items.length === checked.length) {
+      checkboxGroupRef.current.checked = true
+      return
+    }
+    checkboxGroupRef.current.indeterminate = true
+  }, [cart, checked, checkboxGroupRef])
 
   return (
     <Container>
@@ -35,6 +55,7 @@ export function CartScreen() {
         <div className="d-flex align-items-center mb-4">
           <FormCheck
             ref={checkboxGroupRef}
+            onChange={toggleAllChecked}
             type="checkbox"
             className="d-inline-block"
             disabled={isCartEmpty}
@@ -64,6 +85,7 @@ export function CartScreen() {
             <CartItem
               key={`cart-item-${_id}`}
               productId={_id}
+              checked={checked.includes(_id)}
               onToggleChecked={toggleChecked}
             />
           ))}

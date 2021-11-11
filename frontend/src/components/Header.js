@@ -5,13 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 export const Header = memo(() => {
   return (
     <header role="banner">
-      <Navbar
-        className="fixed-top"
-        bg="dark"
-        variant="dark"
-        expand="lg"
-        collapseOnSelect
-      >
+      <Navbar className="fixed-top" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-brand">

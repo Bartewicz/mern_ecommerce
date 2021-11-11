@@ -1,5 +1,6 @@
 :root {
-  --main-bg-color: #fbfbfb;
+  --main-bg-light: #fbfbfb;
+  --main-bg-dark: #474747;
 }
 
 * {
@@ -7,7 +8,7 @@
 }
 
 body {
-  background-color: var(--main-bg-color);
+  background-color: var(--main-bg-light);
   margin: 0;
   padding: 0;
 }
@@ -23,9 +24,13 @@ main {
   padding-top: 7rem;
 }
 
+.navbar {
+  background-color: var(--main-bg-dark);
+}
+
 .navbar-brand {
   position: relative;
-  padding-left: 70px;
+  padding-left: 4rem;
   font-size: 2rem;
   padding-top: 5px;
   padding-bottom: 0px;
@@ -34,8 +39,8 @@ main {
 
 .navbar-brand .logo {
   left: 0;
-  height: 60px;
-  width: 60px;
+  height: 3rem;
+  width: 3rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

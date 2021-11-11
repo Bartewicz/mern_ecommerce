@@ -1,10 +1,12 @@
 @import 'bootstrap.min.css';
-.list-group-item {
-  background-color: transparent;
+@media (max-width: 992px) {
+  .navbar-nav {
+    margin-top: 1rem;
+  }
 }
 
-.bg-dark {
-  background-color: #474747 !important;
+.list-group-item {
+  background-color: transparent;
 }
 
 .ml-1 {
@@ -13,6 +15,10 @@
 
 .ml-2 {
   margin-left: 0.5rem !important;
+}
+
+.ml-3 {
+  margin-left: 1rem !important;
 }
 
 .mr-4 {

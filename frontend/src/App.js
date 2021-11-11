@@ -7,7 +7,7 @@ import { Header } from './components/Header'
 import { HomeScreen } from './screens/Home'
 import { NotFound } from './screens/NotFound'
 import { ProductScreen } from './screens/Product'
-import { CartContext, useCart } from 'features/cart/useCartContext.hook'
+import { CartContext, useCart } from 'features/cart/useCart.hook'
 
 export function App() {
   const cart = useCart()

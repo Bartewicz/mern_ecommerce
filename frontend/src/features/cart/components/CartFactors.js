@@ -1,6 +1,6 @@
 import { useCallback, useState, useContext } from 'react'
 
-import { CartContext } from '../useCartContext.hook'
+import { CartContext } from '../useCart.hook'
 import { AddToCart } from './AddToCart'
 import { CountInCart } from './CountInCart'
 import { CountInStock } from './CountInStock'

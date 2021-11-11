@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { Col, Image, ListGroupItem } from 'react-bootstrap'
 
-import { CartContext } from '../useCartContext.hook'
+import { CartContext } from '../useCart.hook'
 import { isNullOrUndefined } from '@mr-bean/shared'
 import { CaffeineRank } from 'components/CaffeineRank'
 import { TrashIcon } from 'components/Icons/Trash'

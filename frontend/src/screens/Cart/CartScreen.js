@@ -1,11 +1,12 @@
+import { useContext } from 'react'
 import { Container, ListGroup } from 'react-bootstrap'
 
 import { BackButton } from 'components/BackButton'
 import { CartItem } from 'features/cart/components/CartItem'
-import { CartContext, useCartContext } from 'features/cart/useCartContext.hook'
+import { CartContext } from 'features/cart/useCartContext.hook'
 
 export function CartScreen() {
-  const { cart } = useCartContext(CartContext)
+  const { cart } = useContext(CartContext)
 
   return (
     <Container>

@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useContext } from 'react'
 
-import { CartContext, useCartContext } from '../useCartContext.hook'
+import { CartContext } from '../useCartContext.hook'
 import { AddToCart } from './AddToCart'
 import { CountInCart } from './CountInCart'
 import { CountInStock } from './CountInStock'
@@ -9,8 +9,7 @@ import { defaultsTo } from '@mr-bean/shared'
 import { byId } from 'utils'
 
 export function CartFactors({ productId, countInStock }) {
-  const { cart, addItem, increaseQuantityByAmount } =
-    useCartContext(CartContext)
+  const { cart, addItem, increaseQuantityByAmount } = useContext(CartContext)
   const [amount, setAmount] = useState(1)
   const productInCart = defaultsTo(cart.items.find(byId(productId)), {})
   const cartQuantity = defaultsTo(productInCart.quantity, 0)

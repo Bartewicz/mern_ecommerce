@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { createContext, useContext, useMemo, useReducer } from 'react'
+import { createContext, useMemo, useReducer } from 'react'
 
 import produce from 'immer'
 
@@ -49,14 +49,14 @@ function composeActions(recipes, dispatch) {
   }, {})
 }
 
+const cartReducer = createReducer(cartRecipes)
+
 export function useCart() {
-  const cartReducer = createReducer(cartRecipes)
   const [state, dispatch] = useReducer(cartReducer, initialState)
-  const actions = composeActions(cartRecipes, dispatch)
+  const actions = useMemo(
+    () => composeActions(cartRecipes, dispatch),
+    [dispatch]
+  )
 
   return useMemo(() => ({ ...actions, cart: state }), [actions, state])
-}
-
-export function useCartContext(cartContext) {
-  return useContext(cartContext)
 }

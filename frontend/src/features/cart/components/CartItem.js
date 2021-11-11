@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Col, Image, ListGroupItem } from 'react-bootstrap'
 
-import { CartContext, useCartContext } from '../useCartContext.hook'
+import { CartContext } from '../useCartContext.hook'
 import { isNullOrUndefined } from '@mr-bean/shared'
 import { CaffeineRank } from 'components/CaffeineRank'
 import { TrashIcon } from 'components/Icons/Trash'
@@ -11,7 +11,7 @@ import { byId } from 'utils'
 
 export function CartItem({ productId }) {
   const { cart, decreaseQuantity, increaseQuantity, removeItem } =
-    useCartContext(CartContext)
+    useContext(CartContext)
   const { quantity } = cart.items.find(byId(productId))
   const [amount, setAmount] = useState(quantity)
 

@@ -49,7 +49,7 @@ function composeActions(recipes, dispatch) {
   }, {})
 }
 
-export function useCartContext() {
+export function useCart() {
   const cartReducer = createReducer(cartRecipes)
   const [state, dispatch] = useReducer(cartReducer, initialState)
   const actions = composeActions(cartRecipes, dispatch)
@@ -57,6 +57,6 @@ export function useCartContext() {
   return useMemo(() => ({ ...actions, cart: state }), [actions, state])
 }
 
-export function useCart(cartContext) {
+export function useCartContext(cartContext) {
   return useContext(cartContext)
 }

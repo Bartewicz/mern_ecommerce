@@ -7,10 +7,10 @@ import { Header } from './components/Header'
 import { HomeScreen } from './screens/Home'
 import { NotFound } from './screens/NotFound'
 import { ProductScreen } from './screens/Product'
-import { CartContext, useCartContext } from 'features/cart/useCartContext.hook'
+import { CartContext, useCart } from 'features/cart/useCartContext.hook'
 
 export function App() {
-  const cart = useCartContext()
+  const cart = useCart()
 
   return (
     <Router>

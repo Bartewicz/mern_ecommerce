@@ -2,10 +2,10 @@ import { Container, ListGroup } from 'react-bootstrap'
 
 import { BackButton } from 'components/BackButton'
 import { CartItem } from 'features/cart/components/CartItem'
-import { CartContext, useCart } from 'features/cart/useCartContext.hook'
+import { CartContext, useCartContext } from 'features/cart/useCartContext.hook'
 
 export function CartScreen() {
-  const { cart } = useCart(CartContext)
+  const { cart } = useCartContext(CartContext)
 
   return (
     <Container>

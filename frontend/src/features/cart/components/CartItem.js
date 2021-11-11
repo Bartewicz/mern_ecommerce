@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Button, Col, Image, ListGroupItem } from 'react-bootstrap'
+import { Col, Image, ListGroupItem } from 'react-bootstrap'
 
 import { CartContext, useCart } from '../useCartContext.hook'
 import { isNullOrUndefined } from '@mr-bean/shared'
 import { CaffeineRank } from 'components/CaffeineRank'
+import { TrashIcon } from 'components/Icons/Trash'
 import { CountInStock, QuantitySpecifier } from 'features/cart/components'
 import { useGetProductById } from 'features/products/api/products.hooks'
 import { byId } from 'utils'
@@ -32,7 +33,7 @@ export function CartItem({ productId }) {
 
   return (
     <ListGroupItem className="row d-flex align-items-center p-4">
-      <Col md={2} className="d-flex justify-content-center">
+      <Col sm={3} className="d-flex justify-content-center">
         <Image
           className="cart-item-image"
           src={product.image}
@@ -40,7 +41,7 @@ export function CartItem({ productId }) {
           fluid
         />
       </Col>
-      <Col md={8}>
+      <Col sm={8}>
         <h3 className="mt-3 mb-1">{product.name}</h3>
         <span>{product.brand}</span>
         <CaffeineRank caffeineRank={product.caffeine} className="mb-2" />
@@ -55,15 +56,8 @@ export function CartItem({ productId }) {
         />
         <CountInStock count={product.countInStock} />
       </Col>
-      <Col md={2} className="d-flex justify-content-end">
-        <Button
-          variant="outline-danger"
-          size="sm"
-          onClick={onRemove}
-          aria-label="Delete"
-        >
-          {'Remove'}
-        </Button>
+      <Col sm={1} className="d-flex justify-content-end">
+        <TrashIcon onClick={onRemove} />
       </Col>
     </ListGroupItem>
   )

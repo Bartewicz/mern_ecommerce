@@ -1,18 +1,19 @@
 /* Customize Font-Awesome default styles */
 
-.fas.fa-shopping-cart,
-.fas.fa-user {
+.fas.fa-shopping-cart, .fas.fa-user {
   margin-right: 0.5em;
 }
 
-.fas.fa-star,
-.fas.fa-star-half-alt,
-.far.fa-star {
+.fas.fa-star, .fas.fa-star-half-alt, .far.fa-star {
   margin-right: 0.25em;
 }
 
-.fas.fa-circle,
-.far.fa-circle {
+.fas.fa-circle, .far.fa-circle {
   font-size: 0.9em;
   margin: 0 0.1rem;
+}
+
+.fa-trash-alt {
+  color: grey;
+  font-size: 1.5rem;
 }

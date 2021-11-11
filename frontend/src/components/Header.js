@@ -1,8 +1,14 @@
-import { memo } from 'react'
+import { memo, useContext } from 'react'
 import { Container, Image, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
+import { CartContext } from 'features/cart/useCart.hook'
+
 export const Header = memo(() => {
+  const { cart } = useContext(CartContext)
+  const itemsInCart = cart.items.length
+  const hasCartItems = itemsInCart > 0
+
   return (
     <header role="banner">
       <Navbar className="fixed-top" variant="dark" expand="lg" collapseOnSelect>
@@ -18,7 +24,13 @@ export const Header = memo(() => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link className="mr-4">
-                  <span className="fas fa-shopping-cart" />
+                  <span className="fas fa-shopping-cart position-relative">
+                    {hasCartItems ? (
+                      <strong className="cart-items-badge">
+                        {itemsInCart}
+                      </strong>
+                    ) : null}
+                  </span>
                   {'Cart'}
                 </Nav.Link>
               </LinkContainer>

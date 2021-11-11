@@ -46,6 +46,21 @@ main {
   transform: translateY(-50%);
 }
 
+.cart-items-badge {
+  align-items: center;
+  background-color: coral;
+  border-radius: 1.3rem;
+  color: white;
+  display: flex;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  justify-content: center;
+  right: 50%;
+  min-width: 1.3rem;
+  position: absolute;
+  top: 50%;
+}
+
 .no-select {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -67,7 +82,7 @@ main {
 }
 
 .rating-stars {
-  color: #f9a826;
+  color: coral;
 }
 
 .product-main-image {

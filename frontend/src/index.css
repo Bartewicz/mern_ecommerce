@@ -71,7 +71,8 @@ main {
   right: -50%;
 }
 
-.empty-cart-icon {
+.main-content-image {
+  margin: 2rem;
   max-width: 26rem;
 }
 
@@ -89,10 +90,6 @@ main {
   user-select: none;
   /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
-}
-
-.not-found {
-  max-width: 50rem;
 }
 
 .rating-stars {

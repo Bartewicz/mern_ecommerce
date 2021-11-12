@@ -16,7 +16,7 @@ export function App() {
     <Router>
       <CartContext.Provider value={cart}>
         <Header />
-        <main className="pb-3" role="main">
+        <main className="pb-3 px-4" role="main">
           <Switch>
             <Route path="/" component={HomeScreen} exact />
             <Route path="/cart" component={CartScreen} exact />

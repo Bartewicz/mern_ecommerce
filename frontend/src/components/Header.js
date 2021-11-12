@@ -13,11 +13,11 @@ export const Header = memo(() => {
   return (
     <header role="banner">
       <Navbar className="fixed-top" variant="dark" expand="lg" collapseOnSelect>
-        <Container>
+        <Container className="px-4">
           <LinkContainer to="/">
             <Navbar.Brand className="navbar-brand">
               <Image src="/images/logo-60x60.png" className="logo" />
-              {'Mr. Caffeinov'}
+              {'Mr. Bean'}
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

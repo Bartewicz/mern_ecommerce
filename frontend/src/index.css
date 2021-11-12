@@ -32,9 +32,7 @@ main {
   position: relative;
   padding-left: 4rem;
   font-size: 2rem;
-  padding-top: 5px;
   padding-bottom: 0px;
-  line-height: 1rem;
 }
 
 .navbar-brand .logo {
@@ -44,6 +42,19 @@ main {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 360px) {
+  .navbar-brand {
+    position: relative;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
+  .navbar-brand .logo {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
 }
 
 .cart-items-badge {
@@ -104,6 +115,14 @@ main {
   width: 11.4rem;
 }
 
+@media screen and (max-width: 400px) {
+  .product-cart-factor {
+    min-width: calc(0.9 * 11.4rem);
+    transform: scaleY(0.9);
+    width: calc(0.9 * 11.4rem);
+  }
+}
+
 .product-quantity-btn {
   font-size: 1.3rem;
   height: 2.7rem;
@@ -121,4 +140,13 @@ main {
 
 .product-quantity-input:disabled, .product-quantity-input[readonly] {
   background-color: transparent;
+}
+
+@media screen and (max-width: 320px) {
+  .quantity {
+    flex-wrap: wrap-reverse;
+  }
+  .add-cart {
+    flex-wrap: wrap;
+  }
 }

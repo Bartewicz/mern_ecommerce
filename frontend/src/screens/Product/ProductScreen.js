@@ -20,7 +20,7 @@ export function ProductScreen({ match }) {
       <BackButton />
       <h1 className="py-3">{product.name}</h1>
       <Row>
-        <Col md={6} className="d-flex justify-content-center">
+        <Col md={6} className="d-flex justify-content-center mb-3">
           <Image
             className="product-main-image"
             src={product.image}

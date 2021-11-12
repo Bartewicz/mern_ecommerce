@@ -1,7 +1,7 @@
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
 import { isNullOrUndefined } from '@mr-bean/shared'
-import { ProductsGrid } from 'components/ProductsGrid'
+import { ProductCard } from 'components/ProductCard'
 import { Spinner } from 'components/Spinner'
 import { useGetProducts } from 'features/products/api/products.hooks'
 
@@ -15,7 +15,11 @@ export function HomeScreen() {
   return (
     <Container>
       <h1 className="py-3">{'Time for your favourite coffee'}</h1>
-      <ProductsGrid products={products} />
+      <Row className="align-items-stretch">
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
+      </Row>
     </Container>
   )
 }

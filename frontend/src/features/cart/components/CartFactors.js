@@ -34,9 +34,9 @@ export function CartFactors({ productId, countInStock }) {
   }, [amount, cartQuantity, countInStock, productId])
 
   return (
-    <>
+    <div className="cart-factors">
       <div className="d-flex mb-2">
-        <div className="d-flex align-items-center">
+        <div className="quantity d-flex align-items-center">
           <QuantitySpecifier
             amount={amount}
             alreadyInCart={cartQuantity}
@@ -50,10 +50,10 @@ export function CartFactors({ productId, countInStock }) {
           <CountInStock count={countInStock} />
         </div>
       </div>
-      <div className="d-flex align-items-center">
+      <div className="add-cart d-flex align-items-center">
         <AddToCart disabled={isAddDisabled} onClick={onAddToCart} />
         <CountInCart count={cartQuantity} />
       </div>
-    </>
+    </div>
   )
 }

@@ -6,7 +6,7 @@ export function BackButton() {
 
   return (
     <Button
-      className="btn btn-light bg-transparent px-0 mb-3"
+      className="btn btn-light bg-transparent px-0"
       onClick={goBack}
       as="span"
       tabIndex={0}

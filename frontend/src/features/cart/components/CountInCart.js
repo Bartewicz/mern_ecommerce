@@ -5,5 +5,5 @@ export const CountInCart = memo(({ count }) => {
     return null
   }
 
-  return <p className="ml-2 mb-0">{`In cart: ${count}`}</p>
+  return <p className="text-nowrap ml-2 mb-0">{`In cart: ${count}`}</p>
 })

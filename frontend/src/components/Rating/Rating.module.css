@@ -1,3 +1,7 @@
 .rating {
   margin-left: 0.25rem;
 }
+
+.ratingStars {
+  color: var(--remark-color);
+}

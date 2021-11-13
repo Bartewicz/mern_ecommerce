@@ -1,0 +1,5 @@
+.trash {
+  color: var(--main-bg-dark);
+  font-size: 1.5rem;
+  opacity: 0.5;
+}

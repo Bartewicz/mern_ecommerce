@@ -1,0 +1,128 @@
+:root {
+  --brand-text-color: #fff;
+  --nav-text-color: rgba(255, 255, 255, .55);
+  --nav-text-color--hover: rgba(255, 255, 255, .9);
+  --nav-toggler-border-color: rgba(255, 255, 255, .1);
+  --color-transition: color 150ms linear;
+}
+
+.navbar {
+  align-items: center;
+  background-color: var(--main-bg-dark);
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  left: 0;
+  justify-content: space-between;
+  position: fixed;
+  padding: 1.5rem;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 1;
+}
+
+.navbarBrand {
+  color: var(--brand-text-color);
+  font-size: 2rem;
+  margin-right: 2rem;
+  padding-bottom: 0px;
+  padding-left: 4rem;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbarBrand:hover {
+  color: var(--brand-text-color);
+}
+
+.navbarLogo {
+  left: 0;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 360px) {
+  .navbarBrand {
+    position: relative;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
+  .navbarLogo {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+.navbarToggler {
+  background-color: transparent;
+  border: 1px solid var(--nav-toggler-border-color);
+  color: var(--nav-text-color);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem 0.75rem;
+  transition: var(--color-transition);
+}
+
+.navbarTogglerIcon {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.navbarCollapse {
+  align-items: center;
+  background-color: var(--main-bg-dark);
+  display: block;
+  flex-basis: 100%;
+  flex-grow: 1;
+  height: 0;
+  visibility: hidden;
+}
+
+.navbarCollapseOpen {
+  height: auto;
+  visibility: visible;
+}
+
+.navbarNav {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .navbarToggler {
+    display: none;
+  }
+  .navbarCollapse {
+    display: flex;
+    flex-basis: auto;
+    visibility: visible;
+  }
+  .navbarNav {
+    flex-direction: row;
+    margin-top: 0;
+  }
+}
+
+.navLink {
+  color: var(--nav-text-color);
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: var(--color-transition);
+}
+
+.navbarToggler:hover, .navLink:hover {
+  color: var(--nav-text-color--hover);
+}

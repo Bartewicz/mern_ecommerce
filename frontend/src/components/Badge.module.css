@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.badge {
+  align-items: center;
+  background-color: var(--remark-color);
+  border-radius: 1.3rem;
+  bottom: 0;
+  color: white;
+  display: flex;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 0.7rem;
+  font-weight: bold;
+  justify-content: center;
+  min-width: 1.3rem;
+  padding: 0.2rem;
+  position: absolute;
+  transform: translateY(50%);
+}
+
+.left {
+  left: -60%;
+}
+
+.right {
+  right: -50%;
+}

@@ -1,4 +1,5 @@
 import { IconsSet } from '../IconsSet'
+import styles from './Rating.module.css'
 import { MAX_STARS, toStarTypes, typeToIconMap } from './Rating.utils'
 import { joinClassNames } from 'utils'
 
@@ -14,7 +15,7 @@ export function Rating({ rating, reviewsNumber, className }) {
         values={rating}
         containerClassNames={containerClassNames}
       />
-      <span className="ml-1">{`${reviewsNumber} reviews`}</span>
+      <span className={styles.rating}>{`${reviewsNumber} reviews`}</span>
     </>
   )
 }

@@ -1,0 +1,6 @@
+.primaryButton {
+  composes: btn from '../../global.css';
+  background-color: var(--button-primary-bg-color);
+  border-color: var(--button-primary-border-color);
+  color: var(--button-primary-text-color);
+}

@@ -8,7 +8,7 @@ export const TrashIcon = memo(({ onClick }) => {
 
   return (
     <span
-      className="trash-icon far fa-trash-alt"
+      className="far fa-trash-alt"
       onClick={onClick}
       onKeyPress={handleKeyPress}
       aria-label="Delete"

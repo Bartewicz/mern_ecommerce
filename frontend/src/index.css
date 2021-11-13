@@ -1,6 +1,14 @@
+@import url('./global.css');
 :root {
+  --text-color: #1a1a1a;
   --main-bg-light: #fbfbfb;
   --main-bg-dark: #474747;
+  --button-primary-bg-color: #1a1a1a;
+  --button-primary-border-color: var(--button-primary-bg-color);
+  --button-primary-text-color: #fff;
+  --button-secondary-bg-color: transparent;
+  --button-secondary-border-color: var(--text-color);
+  --button-secondary-text-color: var(--text-color);
 }
 
 * {
@@ -9,9 +17,12 @@
 
 body {
   background-color: var(--main-bg-light);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
+
+/* ruleset defined before css modules / to be removed */
 
 #App {
   display: flex;

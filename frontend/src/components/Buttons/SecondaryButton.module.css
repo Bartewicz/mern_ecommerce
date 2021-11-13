@@ -1,0 +1,6 @@
+.secondaryButton {
+  composes: btn from '../../global.css';
+  background-color: var(--button-secondary-bg-color);
+  border: 2px solid var(--button-secondary-border-color);
+  color: var(--button-secondary-text-color);
+}

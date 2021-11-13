@@ -2,7 +2,7 @@ import { Col, Container, Image, Row } from 'react-bootstrap'
 
 import { ProductMainInfo } from './MainInfo'
 import { isNullOrUndefined } from '@mr-bean/shared'
-import { BackButton } from 'components/BackButton'
+import { BackButton } from 'components/Buttons/BackButton'
 import { Spinner } from 'components/Spinner'
 import { useGetProductById } from 'features/products/api/products.hooks'
 

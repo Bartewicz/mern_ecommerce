@@ -1,14 +1,12 @@
-import { Button } from 'react-bootstrap'
+import { PrimaryButton } from 'components/Buttons/PrimaryButton'
 
-export function AddToCart({ disabled, onClick }) {
+export const AddToCart = ({ disabled, onClick }) => {
   return (
-    <Button
+    <PrimaryButton
       onClick={onClick}
-      className="product-cart-factor btn-block d-inline-block"
       disabled={disabled}
-      type="button"
-    >
-      {'Add to cart'}
-    </Button>
+      className="product-cart-factor"
+      label="Add to cart"
+    />
   )
 }

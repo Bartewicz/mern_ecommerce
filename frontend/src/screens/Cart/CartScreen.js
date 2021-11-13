@@ -2,7 +2,7 @@ import { useContext, useCallback, useState, useRef, useEffect } from 'react'
 import { Button, Container, FormCheck, ListGroup } from 'react-bootstrap'
 
 import { EmptyCartPlaceholder } from './EmptyCartPlaceholder'
-import { BackButton } from 'components/BackButton'
+import { BackButton } from 'components/Buttons/BackButton'
 import { CartItem } from 'features/cart/components/CartItem'
 import { CartContext } from 'features/cart/useCart.hook'
 import { byId } from 'utils'

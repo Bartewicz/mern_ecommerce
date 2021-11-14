@@ -15,26 +15,25 @@ export const Header = memo(() => {
   const hasCartItems = itemsInCart > 0
 
   const toggleCollapsed = () => setCollapsed((prev) => !prev)
-  const preventScrolling = (event) => event.preventDefault()
 
   return (
-    <header role="banner">
-      <nav className={styles.navbar} onTouchMove={preventScrolling}>
-        <NavBrand />
-        <NavbarToggler onClick={toggleCollapsed} />
+    <header role="banner" className={styles.header}>
+      <nav className={styles.navbar}>
+        <div className={styles.navbarControls}>
+          <NavBrand />
+          <NavbarToggler onClick={toggleCollapsed} />
+        </div>
         <NavbarCollapse collapsed={collapsed}>
-          <div className={styles.navbarNav}>
-            <NavLink to="/cart">
-              <span className="fas fa-shopping-cart">
-                <Badge value={itemsInCart} visible={hasCartItems} />
-              </span>
-              {'Cart'}
-            </NavLink>
-            <NavLink to="/login">
-              <span className="fas fa-user" />
-              {'Login'}
-            </NavLink>
-          </div>
+          <NavLink to="/cart">
+            <span className="fas fa-shopping-cart">
+              <Badge value={itemsInCart} visible={hasCartItems} />
+            </span>
+            {'Cart'}
+          </NavLink>
+          <NavLink to="/login">
+            <span className="fas fa-user" />
+            {'Login'}
+          </NavLink>
         </NavbarCollapse>
       </nav>
     </header>

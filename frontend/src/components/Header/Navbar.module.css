@@ -3,23 +3,40 @@
   --nav-text-color: rgba(255, 255, 255, .55);
   --nav-text-color--hover: rgba(255, 255, 255, .9);
   --nav-toggler-border-color: rgba(255, 255, 255, .1);
-  --color-transition: color 150ms linear;
+  --transition-settings: 200ms ease-in-out;
+  --toggler-visible-edge-width: 992px;
+}
+
+.header {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar {
-  align-items: center;
-  background-color: var(--main-bg-dark);
   display: flex;
   flex-wrap: wrap;
   font-weight: 600;
-  left: 0;
-  justify-content: space-between;
-  position: fixed;
-  padding: 1.5rem;
-  right: 0;
+  position: relative;
   text-transform: uppercase;
-  top: 0;
+}
+
+.navbarControls {
+  align-items: center;
+  background-color: var(--main-bg-dark);
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  padding: 1.5rem;
   z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+  .navbarControls {
+    width: 100%;
+  }
 }
 
 .navbarBrand {
@@ -66,7 +83,8 @@
   font-size: 1.25rem;
   line-height: 1;
   padding: 0.25rem 0.75rem;
-  transition: var(--color-transition);
+  transition: color var(--transition-settings);
+  z-index: 1;
 }
 
 .navbarTogglerIcon {
@@ -75,44 +93,28 @@
 }
 
 .navbarCollapse {
-  align-items: center;
+  align-items: flex-end;
   background-color: var(--main-bg-dark);
-  display: block;
+  display: flex;
   flex-basis: 100%;
+  flex-direction: column;
   flex-grow: 1;
-  height: 0;
-  visibility: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  padding-top: 0;
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  right: 0;
+  transform: scaleY(0);
+  transition: all var(--transition-settings);
+  z-index: -1;
 }
 
 .navbarCollapseOpen {
-  height: auto;
-  visibility: visible;
-}
-
-.navbarNav {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-@media (min-width: 992px) {
-  .navbarToggler {
-    display: none;
-  }
-  .navbarCollapse {
-    display: flex;
-    flex-basis: auto;
-    visibility: visible;
-  }
-  .navbarNav {
-    flex-direction: row;
-    margin-top: 0;
-  }
+  bottom: -100%;
+  transform: scaleY(1);
 }
 
 .navLink {
@@ -120,9 +122,26 @@
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  transition: var(--color-transition);
+  transition: color var(--transition-settings);
 }
 
 .navbarToggler:hover, .navLink:hover {
   color: var(--nav-text-color--hover);
+}
+
+@media (min-width: 992px) {
+  .navbarToggler {
+    display: none;
+  }
+  .navbarCollapse {
+    align-items: center;
+    flex-basis: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    padding-right: 1rem;
+    position: inherit;
+    transition: none;
+    transform: scaleY(1);
+  }
 }

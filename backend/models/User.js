@@ -12,10 +12,6 @@ function validateRole(role) {
 
 const userSchema = new Schema(
   {
-    name: {
-      firstName: { type: String, required: true },
-      lastName: { type: String, required: true },
-    },
     email: {
       type: String,
       required: true,
@@ -31,12 +27,6 @@ const userSchema = new Schema(
         validator: validateRole,
         message: (role) => `${role} is not valid!`,
       },
-    },
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-      // validator: [async Function] { get all usernames from users and compare }
     },
   },
   { timestamps: true }

@@ -25,8 +25,6 @@ app.use(errorLogger)
 // TODO: add error responder
 app.use(failSafeHandler)
 
-app.listen(
-  PORT,
-  HOSTNAME,
+app.listen(PORT, HOSTNAME, () =>
   logger(`Server running in ${NODE_ENV} mode at: ${HOSTNAME}:${PORT}`)
 )

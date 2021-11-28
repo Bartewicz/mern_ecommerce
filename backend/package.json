@@ -9,12 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@mr-bean/shared": "file:shared",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "generate-password": "^1.6.1",
-    "mongoose": "^6.0.10",
-    "@mr-bean/shared": "file:shared"
+    "mongoose": "^6.0.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

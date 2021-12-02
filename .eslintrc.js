@@ -54,10 +54,6 @@ module.exports = {
         ],
         pathGroups: [
           {
-            pattern: '@mr-bean/**',
-            group: 'parent',
-          },
-          {
             pattern: 'react',
             group: 'builtin',
           },

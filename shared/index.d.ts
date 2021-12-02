@@ -1,0 +1,1 @@
+declare module '@mr-bean/shared'

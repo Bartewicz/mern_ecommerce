@@ -15,10 +15,16 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
+      lowercase: true,
+      trim: true,
       unique: true,
       // validator: [async Function] { get all emails from users and compare }
     },
-    password: { type: String, required: true },
+    password: {
+      type: String,
+      required: true,
+      // validator: validate password
+    },
     role: {
       type: String,
       required: true,

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 import { Product } from '../../models/Product.js'
-import { isNullOrUndefined } from '@mr-bean/shared'
+import { isNull } from '@mr-bean/shared'
 
 const { isValidObjectId } = mongoose
 
@@ -19,7 +19,7 @@ export async function getProductById(req, res) {
   }
 
   const product = await Product.findById(id).exec()
-  if (isNullOrUndefined(product)) {
+  if (isNull(product)) {
     res.status(404)
     throw new Error(`Cannot find product with given id: ${id}`)
   }

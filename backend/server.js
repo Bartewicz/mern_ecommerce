@@ -15,6 +15,7 @@ const { HOSTNAME, PORT, NODE_ENV } = config
 const app = express()
 database.initializeConnection()
 
+app.use(express.json())
 app.use(cors(composeCorsOptions()))
 
 app.use(requestLogger)

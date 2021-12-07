@@ -15,6 +15,7 @@ export const config = Object.freeze({
     CLIENT_ORIGIN_URL,
     defaultConfig.CLIENT_ORIGIN_URL
   ),
+  JWT_TOKEN_SECRET: process.env.JWT_TOKEN_SECRET,
   HOSTNAME: defaultsTo(EXPRESS_APP_HOSTNAME, defaultConfig.HOSTNAME),
   MONGO_URI: process.env.MONGO_URI,
   NODE_ENV: defaultsTo(NODE_ENV, defaultConfig.NODE_ENV),

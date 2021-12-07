@@ -1,3 +1,4 @@
 {
-  "css.lint.validProperties": ["composes"]
+  "css.lint.validProperties": ["composes"],
+  "javascript.validate.enable": false
 }

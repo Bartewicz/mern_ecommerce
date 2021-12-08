@@ -1,16 +1,17 @@
 import bcrypt from 'bcryptjs'
 import mongoose from 'mongoose'
-import { isEmail, isStrongPassword } from 'validator'
+import validator from 'validator'
 
 import { PASSWORD_REQUIREMENTS } from '../globals.js'
+import { hashPassword } from '../routes/auth/utils.js'
 
 export const USER = 'User'
-
 export const USER_ROLES = ['admin', 'customer']
 
 const { model, Schema } = mongoose
+const { isEmail, isStrongPassword } = validator
 
-function validatePasswordStrength(candidatePassword) {
+export function validatePasswordStrength(candidatePassword) {
   return isStrongPassword(candidatePassword, PASSWORD_REQUIREMENTS)
 }
 
@@ -26,22 +27,22 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
       unique: true,
-      validator: [isEmail, 'Email not in valid format'],
+      validate: {
+        validator: isEmail,
+        message: 'Email not in valid format',
+      },
     },
     password: {
       type: String,
       required: true,
-      validator: [
-        validatePasswordStrength,
-        'Password must have at least 8 characters and include minimum 1 number, 1 lowercase and 1 uppercase characters',
-      ],
     },
     role: {
       type: String,
       required: true,
       default: 'customer',
       validate: {
-        validator: [validateRole, 'Role not valid'],
+        validator: validateRole,
+        message: 'Role not valid',
       },
     },
   },
@@ -55,7 +56,7 @@ userSchema.methods.checkPassword = async function checkPassword(password) {
 userSchema.methods.setNewPassword = async function setNewPassword(newPassword) {
   const isValidPassword = validatePasswordStrength(newPassword)
   if (isValidPassword) {
-    this.password = await bcrypt.hash(newPassword, 10)
+    this.password = await hashPassword(newPassword)
   }
   return isValidPassword
 }

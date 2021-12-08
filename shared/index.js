@@ -3,16 +3,12 @@ export function defaultsTo(value, defaultValue) {
   return isInvalid ? defaultValue : value
 }
 
-export function isNullOrUndefined(value) {
-  return isNull(value) || isUndefined(value)
-}
-
 export function isNull(value) {
   return value === null
 }
 
 export function isNotNull(value) {
-  return value === null
+  return value !== null
 }
 
 export function isUndefined(value) {
@@ -20,7 +16,7 @@ export function isUndefined(value) {
 }
 
 export function isNotUndefined(value) {
-  return value === undefined
+  return value !== undefined
 }
 
 export function isString(value) {

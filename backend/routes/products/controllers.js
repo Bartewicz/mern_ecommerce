@@ -1,17 +1,18 @@
 import mongoose from 'mongoose'
 
 import { Product } from '../../models/Product.js'
+import { asyncHandler } from '../../utils/asyncHandler.js'
 import { isNull } from '@mr-bean/shared'
 
 const { isValidObjectId } = mongoose
 
-export async function getProducts(req, res) {
+export const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).exec()
 
   res.json(products)
-}
+})
 
-export async function getProductById(req, res) {
+export const getProductById = asyncHandler(async (req, res) => {
   const { id } = req.params
   if (!isValidObjectId(id)) {
     res.status(400)
@@ -25,4 +26,4 @@ export async function getProductById(req, res) {
   }
 
   res.json(product)
-}
+})
